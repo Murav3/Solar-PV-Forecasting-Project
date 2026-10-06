@@ -1,0 +1,50 @@
+<<<<<<< HEAD
+# R environment files
+.Rhistory
+.RData
+.Rproj.user/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Large binary model files (optional — uncomment if you want to exclude them)
+# output/catboost_model.bin
+# output/lightgbm_model.rds
+# output/xgboost_model.rds
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Fix script (temporary utility)
+fix_csv.pycatboost/inst/libs/x64/libcatboostr.dll
+catboost/inst/libs/
+=======
+# R
+.Rhistory
+.Rdata
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Output — ignore only large intermediate files that are reproducible from source data
+# (training_data.csv ~77 MB and external_data.csv ~28 MB exceed GitHub recommended limits)
+# All final outputs (predictions, models, submission) ARE tracked — see output/
+output/training_data.csv
+output/external_data.csv
+
+# IDE
+.vscode/
+
+# CatBoost training logs (internal — not project outputs)
+catboost_info/
+
+# OS
+.DS_Store
+Thumbs.db
+>>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f

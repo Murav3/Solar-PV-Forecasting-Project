@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+# Auto detect text files and perform LF normalization
+* text=auto
+=======
+catboost/inst/libs/x64/libcatboostr.dll filter=lfs diff=lfs merge=lfs -text
+>>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f

@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-10-05 21:10:00 UTC",
+  "model": "XGBoost (eta=0.05, max_depth=6, tree_method=hist, reg:squarederror)",
+  "target": "Power(mW)",
+  "split": "80/20 chronological date-based train/test split",
+  "train_rows": 262130,
+  "test_rows": 18321,
+  "best_config": "A1",
+  "explanation": "A1 (Weather Only) performs best (R²=0.9743, MAE=39.44, RMSE=98.04) because solar power generation is directly driven by physical solar irradiance (Sunlight Lux, r=0.936). Adding raw temporal (A2) and location (A3) features introduces distribution shift and overfitting to training months, while historical PV lags (A4) suffer from day-to-day weather intermittency.",
+  "experiments": [
+    {
+      "experiment": "A1",
+      "featureGroup": "Weather Only",
+      "mae": 39.44,
+      "rmse": 98.04,
+      "r2": 0.9743,
+      "available": true
+    },
+    {
+      "experiment": "A2",
+      "featureGroup": "Weather + Temporal",
+      "mae": 54.56,
+      "rmse": 117.17,
+      "r2": 0.9632,
+      "available": true
+    },
+    {
+      "experiment": "A3",
+      "featureGroup": "Weather + Temporal + Location",
+      "mae": 54.70,
+      "rmse": 124.22,
+      "r2": 0.9587,
+      "available": true
+    },
+    {
+      "experiment": "A4",
+      "featureGroup": "Weather + Temporal + Location + Historical PV",
+      "mae": 50.30,
+      "rmse": 123.11,
+      "r2": 0.9594,
+      "available": true
+    }
+  ]
+}
