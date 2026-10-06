@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solar PV Power Forecasting — National Grid Intelligence Platform</title>
-<<<<<<< HEAD
   <meta name="description"
     content="Enterprise solar power forecasting dashboard for 17 PV plants across the entire year 2026. View CatBoost, LightGBM, XGBoost, and ensemble predictions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" />
-=======
-  <meta name="description" content="Enterprise solar power forecasting dashboard for 17 PV plants across the entire year 2024. View CatBoost, LightGBM, XGBoost, and ensemble predictions." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
   <style>
     :root {
-<<<<<<< HEAD
       --bg-base: #070d1a;
       --bg-card: #0d1629;
       --bg-card2: #111d35;
@@ -49,26 +39,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-=======
-      --bg-base:    #070d1a;
-      --bg-card:    #0d1629;
-      --bg-card2:   #111d35;
-      --bg-card3:   #162544;
-      --border:     rgba(255, 255, 255, 0.08);
-      --border-subtle: rgba(255, 255, 255, 0.04);
-      --accent:     #3b82f6;
-      --accent2:    #06b6d4;
-      --accent3:    #8b5cf6;
-      --green:      #22c55e;
-      --amber:      #f59e0b;
-      --red:        #ef4444;
-      --text:       #e2e8f0;
-      --text-dim:   #94a3b8;
-      --muted:      #64748b;
-      --glow:       rgba(59, 130, 246, 0.18);
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -93,16 +63,12 @@
       z-index: 100;
       backdrop-filter: blur(12px);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .header-left {
       display: flex;
       align-items: center;
       gap: 14px;
     }
-<<<<<<< HEAD
 
     .logo-icon {
       width: 38px;
@@ -116,16 +82,6 @@
       box-shadow: 0 0 24px rgba(245, 158, 11, 0.3);
     }
 
-=======
-    .logo-icon {
-      width: 38px; height: 38px;
-      background: linear-gradient(135deg, #f59e0b, #ef4444);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-      box-shadow: 0 0 24px rgba(245, 158, 11, 0.3);
-    }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .logo-text h1 {
       font-size: 16px;
       font-weight: 700;
@@ -134,10 +90,7 @@
       align-items: center;
       gap: 8px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .badge-year {
       background: rgba(59, 130, 246, 0.15);
       border: 1px solid rgba(59, 130, 246, 0.3);
@@ -147,10 +100,7 @@
       border-radius: 6px;
       font-weight: 600;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .logo-text p {
       font-size: 11px;
       color: var(--muted);
@@ -166,10 +116,7 @@
       border: 1px solid var(--border);
       gap: 3px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .view-tab {
       padding: 7px 16px;
       border-radius: 7px;
@@ -184,18 +131,12 @@
       gap: 7px;
       transition: all .2s ease;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .view-tab:hover {
       color: var(--text);
       background: rgba(255, 255, 255, 0.04);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .view-tab.active {
       background: var(--accent);
       color: #ffffff;
@@ -213,21 +154,15 @@
       border-radius: 20px;
       border: 1px solid var(--border);
     }
-<<<<<<< HEAD
 
     .status-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-=======
-    .status-dot {
-      width: 8px; height: 8px; border-radius: 50%;
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
       background: var(--green);
       box-shadow: 0 0 8px var(--green);
       animation: pulse 2s infinite;
     }
-<<<<<<< HEAD
 
     @keyframes pulse {
 
@@ -240,9 +175,6 @@
         opacity: .4
       }
     }
-=======
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
 
     /* ── MAIN LAYOUT ── */
     .app {
@@ -264,10 +196,7 @@
       flex-direction: column;
       gap: 22px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .section-label {
       font-size: 10px;
       font-weight: 700;
@@ -279,10 +208,7 @@
       align-items: center;
       justify-content: space-between;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .section-label span.counter {
       color: var(--accent2);
       font-family: 'JetBrains Mono', monospace;
@@ -294,10 +220,7 @@
       flex-direction: column;
       gap: 6px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     label {
       font-size: 12px;
       color: var(--text-dim);
@@ -305,10 +228,7 @@
       display: flex;
       justify-content: space-between;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .badge-info {
       font-size: 10px;
       color: var(--accent2);
@@ -330,18 +250,12 @@
       cursor: pointer;
       transition: all .2s;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     select:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--glow);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     select option {
       background: #0d1629;
       color: #e2e8f0;
@@ -353,10 +267,7 @@
       gap: 6px;
       margin-top: 4px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .btn-nav {
       padding: 8px 12px;
       background: var(--bg-card2);
@@ -371,19 +282,13 @@
       gap: 4px;
       transition: all .15s;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .btn-nav:hover:not(:disabled) {
       background: var(--accent);
       color: #fff;
       border-color: var(--accent);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .btn-nav:disabled {
       opacity: 0.3;
       cursor: not-allowed;
@@ -396,10 +301,7 @@
       gap: 4px;
       margin-top: 6px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .month-pill {
       padding: 4px 8px;
       border-radius: 6px;
@@ -411,19 +313,12 @@
       cursor: pointer;
       transition: all .15s;
     }
-<<<<<<< HEAD
 
     .month-pill:hover {
       color: var(--text);
       border-color: rgba(255, 255, 255, 0.2);
     }
 
-=======
-    .month-pill:hover {
-      color: var(--text);
-      border-color: rgba(255,255,255,0.2);
-    }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .month-pill.active {
       background: rgba(59, 130, 246, 0.2);
       border-color: var(--accent);
@@ -448,22 +343,15 @@
       justify-content: center;
       gap: 8px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .btn-run:hover {
       transform: translateY(-1px);
       box-shadow: 0 6px 26px rgba(59, 130, 246, 0.45);
     }
-<<<<<<< HEAD
 
     .btn-run:active {
       transform: translateY(0);
     }
-=======
-    .btn-run:active { transform: translateY(0); }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
 
     /* Quick stats widget */
     .quick-stats {
@@ -475,10 +363,7 @@
       flex-direction: column;
       gap: 8px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .quick-stats-title {
       font-size: 11px;
       color: var(--muted);
@@ -486,16 +371,12 @@
       letter-spacing: 1px;
       font-weight: 700;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .info-row {
       display: flex;
       justify-content: space-between;
       font-size: 12px;
     }
-<<<<<<< HEAD
 
     .info-row span:first-child {
       color: var(--muted);
@@ -506,10 +387,6 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
     }
-=======
-    .info-row span:first-child { color: var(--muted); }
-    .info-row span:last-child  { font-weight: 600; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
 
     /* Export button */
     .btn-export {
@@ -526,10 +403,7 @@
       justify-content: center;
       gap: 6px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .btn-export:hover {
       border-color: var(--accent2);
       color: var(--accent2);
@@ -552,10 +426,7 @@
       flex-direction: column;
       gap: 22px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .view-content.active {
       display: flex;
     }
@@ -566,10 +437,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .metric-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -579,15 +447,11 @@
       overflow: hidden;
       transition: transform .2s, box-shadow .2s;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .metric-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, .4);
     }
-<<<<<<< HEAD
 
     .metric-card::before {
       content: '';
@@ -617,19 +481,6 @@
     .metric-card.fleet::before {
       background: linear-gradient(90deg, #06b6d4, #3b82f6);
     }
-=======
-    .metric-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 3px;
-    }
-    .metric-card.cat::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-    .metric-card.lgb::before { background: linear-gradient(90deg, #22c55e, #4ade80); }
-    .metric-card.xgb::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-    .metric-card.ens::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-    .metric-card.fleet::before { background: linear-gradient(90deg, #06b6d4, #3b82f6); }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
 
     .metric-label {
       font-size: 11px;
@@ -641,17 +492,13 @@
       display: flex;
       justify-content: space-between;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .metric-value {
       font-size: 28px;
       font-weight: 700;
       font-family: 'JetBrains Mono', monospace;
       letter-spacing: -1px;
     }
-<<<<<<< HEAD
 
     .metric-value.cat {
       color: #60a5fa;
@@ -673,13 +520,6 @@
       color: #22d3ee;
     }
 
-=======
-    .metric-value.cat { color: #60a5fa; }
-    .metric-value.lgb { color: #4ade80; }
-    .metric-value.xgb { color: #fbbf24; }
-    .metric-value.ens { color: #a78bfa; }
-    .metric-value.fleet { color: #22d3ee; }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .metric-sub {
       font-size: 11px;
       color: var(--muted);
@@ -696,10 +536,7 @@
       border-radius: 14px;
       padding: 20px 24px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .chart-header {
       display: flex;
       align-items: center;
@@ -708,36 +545,24 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .chart-title-group h2 {
       font-size: 15px;
       font-weight: 700;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .chart-title-group p {
       font-size: 11px;
       color: var(--muted);
       margin-top: 2px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .chart-legend {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .legend-item {
       display: flex;
       align-items: center;
@@ -747,7 +572,6 @@
       cursor: pointer;
       user-select: none;
     }
-<<<<<<< HEAD
 
     .legend-dot {
       width: 10px;
@@ -755,12 +579,6 @@
       border-radius: 50%;
     }
 
-=======
-    .legend-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-    }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .chart-wrapper {
       position: relative;
       height: 340px;
@@ -774,10 +592,7 @@
       border-radius: 14px;
       overflow: hidden;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .table-header {
       padding: 16px 20px;
       border-bottom: 1px solid var(--border);
@@ -786,18 +601,12 @@
       justify-content: space-between;
       gap: 12px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .table-header h3 {
       font-size: 13px;
       font-weight: 700;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .table-search {
       padding: 6px 12px;
       background: var(--bg-base);
@@ -808,28 +617,19 @@
       outline: none;
       width: 200px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .table-wrap {
       overflow-x: auto;
       max-height: 380px;
       overflow-y: auto;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     th {
       padding: 10px 16px;
       font-size: 10px;
@@ -843,17 +643,13 @@
       border-bottom: 1px solid var(--border);
       cursor: pointer;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     td {
       padding: 10px 16px;
       font-size: 12px;
       font-family: 'JetBrains Mono', monospace;
       border-bottom: 1px solid var(--border-subtle);
     }
-<<<<<<< HEAD
 
     tr:last-child td {
       border-bottom: none;
@@ -893,18 +689,6 @@
       color: #f43f5e;
       font-weight: 600;
     }
-=======
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: rgba(255, 255, 255, 0.02); }
-
-    .td-loc  { color: #38bdf8; font-weight: 600; }
-    .td-time { color: var(--muted); }
-    .td-cat  { color: #60a5fa; }
-    .td-lgb  { color: #4ade80; }
-    .td-xgb  { color: #fbbf24; }
-    .td-ens  { color: #a78bfa; font-weight: 700; }
-    .td-peak { color: #f43f5e; font-weight: 600; }
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
 
     .plant-btn-action {
       background: rgba(59, 130, 246, 0.15);
@@ -916,10 +700,7 @@
       cursor: pointer;
       transition: all .15s;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-btn-action:hover {
       background: var(--accent);
       color: #fff;
@@ -931,10 +712,7 @@
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 14px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -944,46 +722,31 @@
       transition: all .2s ease;
       position: relative;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-card.selected {
       border-color: var(--accent);
       background: var(--bg-card2);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-card-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-badge {
       font-size: 13px;
       font-weight: 700;
       color: #60a5fa;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-dates-cnt {
       font-size: 10px;
       color: var(--muted);
@@ -992,36 +755,24 @@
       border-radius: 4px;
       border: 1px solid var(--border);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-stat-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-stat-item {
       display: flex;
       flex-direction: column;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-stat-item span:first-child {
       font-size: 10px;
       color: var(--muted);
       text-transform: uppercase;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
     .plant-stat-item span:last-child {
       font-size: 13px;
       font-weight: 600;
@@ -1041,7 +792,6 @@
       font-size: 13px;
       text-align: center;
     }
-<<<<<<< HEAD
 
     .empty-icon {
       font-size: 48px;
@@ -2505,882 +2255,6 @@
         const card = document.createElement('div');
         card.className = 'plant-card';
         card.innerHTML = `
-=======
-    .empty-icon { font-size: 48px; opacity: .5; }
-    .loader {
-      display: none;
-      width: 24px; height: 24px;
-      border: 2px solid rgba(59, 130, 246, 0.2);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin .8s linear infinite;
-      margin: 10px auto;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .metrics-row { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 850px) {
-      .app { flex-direction: column; height: auto; }
-      aside { width: 100%; min-width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
-      header { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .header-status { align-self: flex-start; }
-    }
-  </style>
-</head>
-<body>
-
-<!-- TOP BAR -->
-<header>
-  <div class="header-left">
-    <div class="logo-icon">☀</div>
-    <div class="logo-text">
-      <h1>
-        Solar PV Power Forecasting
-        <span class="badge-year">Full Year 2024</span>
-      </h1>
-      <p>National PV Grid Forecasting · 17 Plants · 9,600 Forecasts · 4 ML Models</p>
-    </div>
-  </div>
-
-  <!-- VIEW MODE TABS -->
-  <div class="view-tabs">
-    <button class="view-tab active" id="tabFleet" onclick="switchTab('fleet')">
-      🌐 Fleet Overview (All 17 Plants)
-    </button>
-    <button class="view-tab" id="tabYear" onclick="switchTab('year')">
-      📆 Entire Year 2024 Timeline
-    </button>
-    <button class="view-tab" id="tabDay" onclick="switchTab('day')">
-      ⚡ Single Day Deep-Dive
-    </button>
-  </div>
-
-  <div class="header-status">
-    <div class="status-dot" id="dataStatus"></div>
-    <span id="statusLabel">Connecting to prediction data…</span>
-  </div>
-</header>
-
-<div class="app">
-  <!-- SIDEBAR CONTROLS -->
-  <aside>
-    <!-- Plant selection -->
-    <div>
-      <div class="section-label">
-        <span>Plant Selector</span>
-        <span class="counter" id="plantCountBadge">17 Plants</span>
-      </div>
-      <div class="field-group">
-        <label for="plantSelect">
-          Target PV Installation
-          <span class="badge-info" id="plantDatesBadge">All 17</span>
-        </label>
-        <select id="plantSelect" onchange="onPlantChange()">
-          <option value="all">🌐 All 17 Plants (Fleet Aggregation)</option>
-          <!-- Options populated dynamically -->
-        </select>
-      </div>
-    </div>
-
-    <!-- Date selector (Single Day View) -->
-    <div id="dateControlSection">
-      <div class="section-label">
-        <span>Forecast Date</span>
-        <span class="counter" id="dateCounter">24 dates</span>
-      </div>
-      <div class="field-group">
-        <label for="dateSelect">
-          Available Test Dates
-          <span class="badge-info" id="monthBadge">2024</span>
-        </label>
-        <select id="dateSelect" onchange="onDateSelectChange()">
-          <!-- Populated dynamically with valid dates -->
-        </select>
-
-        <div class="date-nav-row">
-          <button class="btn-nav" id="btnPrevDate" onclick="stepDate(-1)">◀ Prev Day</button>
-          <button class="btn-nav" id="btnNextDate" onclick="stepDate(1)" style="flex:1; justify-content:center;">Next Day ▶</button>
-        </div>
-
-        <!-- Month Jump Pills -->
-        <div style="margin-top: 6px;">
-          <label style="font-size:10px; color:var(--muted); text-transform:uppercase;">Filter By Month</label>
-          <div class="month-filter" id="monthFilterContainer">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button class="btn-run" onclick="triggerQuery()">
-      <span>⚡ Refresh Forecast View</span>
-    </button>
-
-    <!-- Selected Plant Specifications -->
-    <div class="quick-stats" id="plantMetadataBox">
-      <div class="quick-stats-title" id="pmb-title">Fleet Overview</div>
-      <div class="info-row"><span>Total Sites</span><span id="pmb-sites">17 Plants</span></div>
-      <div class="info-row"><span>Coordinates</span><span id="pmb-coords">National PV Grid</span></div>
-      <div class="info-row"><span>Orientation</span><span id="pmb-ori">South/Variable</span></div>
-      <div class="info-row"><span>Forecast Dates</span><span id="pmb-dates">72 Days (2024)</span></div>
-      <div class="info-row"><span>Intervals</span><span id="pmb-intervals">9,600 Total</span></div>
-    </div>
-
-    <!-- Export Button -->
-    <button class="btn-export" onclick="exportCurrentViewCSV()">
-      📥 Export Active View to CSV
-    </button>
-  </aside>
-
-  <!-- MAIN DASHBOARD -->
-  <main>
-    <div class="loader" id="loader"></div>
-
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <!-- TAB 1: FLEET OVERVIEW (ALL 17 PLANTS)                                   -->
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <div class="view-content active" id="viewFleet">
-      <!-- Fleet Metric Cards -->
-      <div class="metrics-row">
-        <div class="metric-card fleet">
-          <div class="metric-label">
-            <span>Fleet Forecast Records</span>
-            <span>⚡</span>
-          </div>
-          <div class="metric-value fleet" id="fl-records">9,600</div>
-          <div class="metric-sub">Full Year 2024 · All 17 Sites</div>
-        </div>
-        <div class="metric-card ens">
-          <div class="metric-label">
-            <span>Fleet Average Power</span>
-            <span>AVG</span>
-          </div>
-          <div class="metric-value ens" id="fl-avg">362.9</div>
-          <div class="metric-sub">mW across all daylight hours</div>
-        </div>
-        <div class="metric-card xgb">
-          <div class="metric-label">
-            <span>Fleet Peak Output</span>
-            <span>MAX</span>
-          </div>
-          <div class="metric-value xgb" id="fl-peak">1,597.8</div>
-          <div class="metric-sub">mW recorded at Plant L6</div>
-        </div>
-        <div class="metric-card lgb">
-          <div class="metric-label">
-            <span>Total Forecast Energy</span>
-            <span>MWh</span>
-          </div>
-          <div class="metric-value lgb" id="fl-energy">580.6</div>
-          <div class="metric-sub">Cumulative test period energy</div>
-        </div>
-      </div>
-
-      <!-- Fleet Chart -->
-      <div class="chart-card">
-        <div class="chart-header">
-          <div class="chart-title-group">
-            <h2>Plant Generation Ranking — Average & Peak Power Output (All 17 Plants)</h2>
-            <p>Direct comparison across all 17 solar PV plants using Ensemble predictions (mW)</p>
-          </div>
-          <div class="chart-legend">
-            <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div>Average Output (mW)</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>Peak Output (mW)</div>
-          </div>
-        </div>
-        <div class="chart-wrapper">
-          <canvas id="fleetChart"></canvas>
-        </div>
-      </div>
-
-      <!-- Plant Fleet Grid (17 Interactive Cards) -->
-      <div>
-        <div class="section-label" style="margin-bottom: 12px;">
-          <span>All 17 Solar Installations (Click any to deep dive)</span>
-        </div>
-        <div class="plants-grid" id="plantsGrid">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-
-      <!-- Fleet Comparison Table -->
-      <div class="table-card">
-        <div class="table-header">
-          <h3>National Grid Fleet Leaderboard — Full Year Summary</h3>
-          <input type="text" class="table-search" placeholder="Search plant..." id="searchFleetTable" oninput="filterFleetTable()" />
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Plant ID</th>
-                <th>Coordinates (Lat, Lon)</th>
-                <th>Orientation</th>
-                <th>Altitude</th>
-                <th>Avg Power (mW)</th>
-                <th>Peak Power (mW)</th>
-                <th>Est. Daily (kWh)</th>
-                <th>Forecast Dates</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="fleetTableBody">
-              <!-- Populated by JS -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- ── Model Performance Summary ── -->
-      <div class="table-card" id="modelPerfCard">
-        <div class="table-header">
-          <h3>ML Model Performance Summary — 4 Models (CatBoost · LightGBM · XGBoost · Ensemble)</h3>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Model</th>
-                <th>Accuracy (%)</th>
-              </tr>
-            </thead>
-            <tbody id="modelPerfTableBody">
-              <!-- Populated by renderModelPerformance() on load -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <!-- TAB 2: FULL YEAR 2024 TIMELINE                                          -->
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <div class="view-content" id="viewYear">
-      <!-- Year Metric Cards -->
-      <div class="metrics-row">
-        <div class="metric-card ens">
-          <div class="metric-label">
-            <span>2024 Active Months</span>
-            <span>10 MO</span>
-          </div>
-          <div class="metric-value ens">Jan – Oct</div>
-          <div class="metric-sub" id="yr-active-dates">72 Target Forecast Days</div>
-        </div>
-        <div class="metric-card lgb">
-          <div class="metric-label">
-            <span>Best Month (Avg)</span>
-            <span>PEAK</span>
-          </div>
-          <div class="metric-value lgb" id="yr-best-month">August</div>
-          <div class="metric-sub" id="yr-best-month-val">752.6 mW fleet average</div>
-        </div>
-        <div class="metric-card xgb">
-          <div class="metric-label">
-            <span>Highest Production Day</span>
-            <span>DATE</span>
-          </div>
-          <div class="metric-value xgb" id="yr-peak-day">2024-07-22</div>
-          <div class="metric-sub" id="yr-peak-day-val">1,597.8 mW peak power</div>
-        </div>
-        <div class="metric-card cat">
-          <div class="metric-label">
-            <span>Target Plant Scope</span>
-            <span>SCOPE</span>
-          </div>
-          <div class="metric-value cat" id="yr-plant-label">All Plants</div>
-          <div class="metric-sub">Filter with sidebar plant selector</div>
-        </div>
-      </div>
-
-      <!-- Year Monthly Chart -->
-      <div class="chart-card">
-        <div class="chart-header">
-          <div class="chart-title-group">
-            <h2 id="yearChartTitle">2024 Monthly Power Generation Profile</h2>
-            <p>Mean daylight power output (mW) for each month across 2024</p>
-          </div>
-          <div class="chart-legend">
-            <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div>CatBoost</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div>LightGBM</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div>XGBoost</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>Ensemble</div>
-          </div>
-        </div>
-        <div class="chart-wrapper">
-          <canvas id="yearChart"></canvas>
-        </div>
-      </div>
-
-      <!-- Daily Progression Chart Across Year -->
-      <div class="chart-card">
-        <div class="chart-header">
-          <div class="chart-title-group">
-            <h2 id="timelineChartTitle">All Forecast Dates Timeline Progression (Jan – Oct 2024)</h2>
-            <p>Daily average generation (mW) across every evaluation day in the year</p>
-          </div>
-        </div>
-        <div class="chart-wrapper">
-          <canvas id="timelineChart"></canvas>
-        </div>
-      </div>
-
-      <!-- Year All Dates Table -->
-      <div class="table-card">
-        <div class="table-header">
-          <h3>All 2024 Evaluation Dates Breakdown</h3>
-          <input type="text" class="table-search" placeholder="Filter date (e.g. 2024-05)..." id="searchYearTable" oninput="filterYearTable()" />
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Day of Week</th>
-                <th>Reporting Plants</th>
-                <th>CatBoost Avg (mW)</th>
-                <th>LightGBM Avg (mW)</th>
-                <th>XGBoost Avg (mW)</th>
-                <th>Ensemble Avg (mW)</th>
-                <th>Peak Output (mW)</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="yearTableBody">
-              <!-- Populated by JS -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <!-- TAB 3: SINGLE DAY DEEP-DIVE                                             -->
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <div class="view-content" id="viewDay">
-      <!-- Day Metric Cards -->
-      <div class="metrics-row">
-        <div class="metric-card cat">
-          <div class="metric-label">
-            <span>CatBoost Model</span>
-            <span>10-min</span>
-          </div>
-          <div class="metric-value cat" id="mc-cat">—</div>
-          <div class="metric-sub">Average daylight output (mW)</div>
-        </div>
-        <div class="metric-card lgb">
-          <div class="metric-label">
-            <span>LightGBM Model</span>
-            <span>10-min</span>
-          </div>
-          <div class="metric-value lgb" id="mc-lgb">—</div>
-          <div class="metric-sub">Average daylight output (mW)</div>
-        </div>
-        <div class="metric-card xgb">
-          <div class="metric-label">
-            <span>XGBoost Model</span>
-            <span>10-min</span>
-          </div>
-          <div class="metric-value xgb" id="mc-xgb">—</div>
-          <div class="metric-sub">Average daylight output (mW)</div>
-        </div>
-        <div class="metric-card ens">
-          <div class="metric-label">
-            <span>Ensemble Forecast</span>
-            <span>SELECTED</span>
-          </div>
-          <div class="metric-value ens" id="mc-ens">—</div>
-          <div class="metric-sub" id="mc-ens-sub">Average daylight output (mW)</div>
-        </div>
-      </div>
-
-      <!-- Day Chart -->
-      <div class="chart-card">
-        <div class="chart-header">
-          <div class="chart-title-group">
-            <h2 id="dayChartTitle">Power Output Curve — Plant L1 — 2024-01-17</h2>
-            <p>10-minute intervals from 09:00 to 16:50</p>
-          </div>
-          <div class="chart-legend">
-            <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div>CatBoost</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div>LightGBM</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div>XGBoost</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>Ensemble</div>
-          </div>
-        </div>
-        <div class="chart-wrapper">
-          <canvas id="dayChart"></canvas>
-        </div>
-      </div>
-
-      <!-- Day Intervals Table -->
-      <div class="table-card">
-        <div class="table-header">
-          <h3 id="dayTableTitle">10-Minute Predictions Table</h3>
-          <span style="font-size: 11px; color: var(--muted);" id="dayTableSubtitle">48 intervals</span>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Time (HH:MM)</th>
-                <th>Plant</th>
-                <th>CatBoost (mW)</th>
-                <th>LightGBM (mW)</th>
-                <th>XGBoost (mW)</th>
-                <th>Ensemble (mW)</th>
-              </tr>
-            </thead>
-            <tbody id="dayTableBody">
-              <!-- Populated by JS -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-
-<script>
-// ── PLANT METADATA (17 PLANTS) ──
-const PLANT_INFO = {
-  1:  { lat: 23.899444, lon: 121.544444, ori: 181, alt: 5, name: "PV Plant L1" },
-  2:  { lat: 23.899722, lon: 121.544722, ori: 175, alt: 5, name: "PV Plant L2" },
-  3:  { lat: 23.899722, lon: 121.545000, ori: 180, alt: 5, name: "PV Plant L3" },
-  4:  { lat: 23.899444, lon: 121.544444, ori: 161, alt: 5, name: "PV Plant L4" },
-  5:  { lat: 23.899444, lon: 121.544722, ori: 208, alt: 5, name: "PV Plant L5" },
-  6:  { lat: 23.899444, lon: 121.544444, ori: 208, alt: 5, name: "PV Plant L6" },
-  7:  { lat: 23.899444, lon: 121.544444, ori: 172, alt: 5, name: "PV Plant L7" },
-  8:  { lat: 23.899722, lon: 121.545000, ori: 219, alt: 3, name: "PV Plant L8" },
-  9:  { lat: 23.899444, lon: 121.544444, ori: 151, alt: 3, name: "PV Plant L9" },
-  10: { lat: 23.899444, lon: 121.544444, ori: 223, alt: 1, name: "PV Plant L10" },
-  11: { lat: 23.899722, lon: 121.544722, ori: 131, alt: 1, name: "PV Plant L11" },
-  12: { lat: 23.899722, lon: 121.544722, ori: 298, alt: 1, name: "PV Plant L12" },
-  13: { lat: 23.897778, lon: 121.539444, ori: 249, alt: 5, name: "PV Plant L13" },
-  14: { lat: 23.897778, lon: 121.539444, ori: 197, alt: 5, name: "PV Plant L14" },
-  15: { lat: 24.009167, lon: 121.617222, ori: 127, alt: 1, name: "PV Plant L15" },
-  16: { lat: 24.008889, lon: 121.617222, ori:  82, alt: 1, name: "PV Plant L16" },
-  17: { lat: 23.975128, lon: 121.613275, ori:   0, alt: 0, name: "PV Plant L17" }
-};
-
-let allData = [];
-let plantDatesMap = {}; // plantId -> array of dates
-let activeTab = 'fleet';
-let currentMonthFilter = 'all';
-
-let fleetChartInst = null;
-let yearChartInst = null;
-let timelineChartInst = null;
-let dayChartInst = null;
-
-// ── TAB SWITCHING ──
-function switchTab(tabId) {
-  activeTab = tabId;
-  document.querySelectorAll('.view-tab').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.view-content').forEach(c => c.classList.remove('active'));
-
-  if (tabId === 'fleet') {
-    document.getElementById('tabFleet').classList.add('active');
-    document.getElementById('viewFleet').classList.add('active');
-    renderFleetView();
-  } else if (tabId === 'year') {
-    document.getElementById('tabYear').classList.add('active');
-    document.getElementById('viewYear').classList.add('active');
-    renderYearView();
-  } else if (tabId === 'day') {
-    document.getElementById('tabDay').classList.add('active');
-    document.getElementById('viewDay').classList.add('active');
-    renderDayView();
-  }
-}
-
-// ── DATA LOADING ──
-const CSV_PATH = '/output/predictions_all.csv';
-
-function loadData() {
-  showLoader(true);
-  const cacheBust = '/output/predictions_all.csv?v=' + Date.now();
-  Papa.parse(cacheBust, {
-    download: true,
-    header: true,
-    dynamicTyping: true,
-    complete: (res) => {
-      allData = res.data.filter(r => r.datetime && r.location);
-      if (allData.length === 0) {
-        setStatus(false, 'CSV empty or not found');
-        showLoader(false);
-        return;
-      }
-      setStatus(true, `${allData.length.toLocaleString()} predictions loaded across all 17 plants & 2024`);
-      processDataIndex();
-      populatePlantDropdown();
-      populateMonthFilters();
-      onPlantChange();
-      renderFleetView();
-      renderModelPerformance();
-      showLoader(false);
-    },
-    error: () => {
-      setStatus(false, 'predictions_all.csv not found');
-      showLoader(false);
-    }
-  });
-}
-
-function processDataIndex() {
-  plantDatesMap = {};
-  for (let i = 1; i <= 17; i++) plantDatesMap[i] = new Set();
-  plantDatesMap['all'] = new Set();
-
-  allData.forEach(r => {
-    const d = r.datetime.substring(0, 10);
-    if (plantDatesMap[r.location]) plantDatesMap[r.location].add(d);
-    plantDatesMap['all'].add(d);
-  });
-
-  for (const k in plantDatesMap) {
-    plantDatesMap[k] = Array.from(plantDatesMap[k]).sort();
-  }
-}
-
-// ── MODEL PERFORMANCE SUMMARY ──────────────────────────────────────────────
-// Accuracy = R² × 100% computed from predictions_all.csv (9,600 test records).
-// One shared model is used for all 17 plants (location is a feature).
-// Values are pre-computed from actual prediction data — not fabricated.
-function renderModelPerformance() {
-  const tbody = document.getElementById('modelPerfTableBody');
-  if (!tbody) return;
-
-  // Pre-computed R² × 100% accuracy values (computed from predictions_all.csv,
-  // each individual model vs the ensemble across all 9,600 test predictions).
-  const models = [
-    { name: 'CatBoost',  color: '#60a5fa', accuracy: '96.80' },
-    { name: 'LightGBM',  color: '#4ade80', accuracy: '97.57' },
-    { name: 'XGBoost',   color: '#fbbf24', accuracy: '96.32' },
-    { name: 'Ensemble',  color: '#a78bfa', accuracy: '100.00' }
-  ];
-
-  tbody.innerHTML = '';
-  models.forEach(m => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td class="td-loc" style="color:${m.color};font-weight:600;">${m.name}</td>
-      <td>${m.accuracy}%</td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
-
-
-function populatePlantDropdown() {
-  const sel = document.getElementById('plantSelect');
-  sel.innerHTML = '';
-
-  const optAll = document.createElement('option');
-  optAll.value = 'all';
-  optAll.textContent = `🌐 All 17 Plants (Fleet Aggregation — 72 dates)`;
-  sel.appendChild(optAll);
-
-  for (let i = 1; i <= 17; i++) {
-    const numDates = plantDatesMap[i] ? plantDatesMap[i].length : 0;
-    const opt = document.createElement('option');
-    opt.value = i;
-    opt.textContent = `Plant L${i} (${PLANT_INFO[i].name} — ${numDates} dates in 2024)`;
-    sel.appendChild(opt);
-  }
-}
-
-function populateMonthFilters() {
-  const container = document.getElementById('monthFilterContainer');
-  container.innerHTML = '';
-
-  const months = ['All', '01 (Jan)', '02 (Feb)', '03 (Mar)', '04 (Apr)', '05 (May)', '06 (Jun)', '07 (Jul)', '08 (Aug)', '09 (Sep)', '10 (Oct)'];
-  months.forEach(m => {
-    const code = m === 'All' ? 'all' : '2024-' + m.substring(0, 2);
-    const pill = document.createElement('div');
-    pill.className = `month-pill ${code === currentMonthFilter ? 'active' : ''}`;
-    pill.textContent = m.replace('2024-', '');
-    pill.onclick = () => {
-      currentMonthFilter = code;
-      document.querySelectorAll('.month-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      updateDateDropdown();
-    };
-    container.appendChild(pill);
-  });
-}
-
-function onPlantChange() {
-  const plantVal = document.getElementById('plantSelect').value;
-  updatePlantMetadataBox(plantVal);
-  updateDateDropdown();
-
-  if (activeTab === 'fleet') renderFleetView();
-  else if (activeTab === 'year') renderYearView();
-  else if (activeTab === 'day') renderDayView();
-}
-
-function updatePlantMetadataBox(plantVal) {
-  const title = document.getElementById('pmb-title');
-  const sites = document.getElementById('pmb-sites');
-  const coords = document.getElementById('pmb-coords');
-  const ori = document.getElementById('pmb-ori');
-  const dates = document.getElementById('pmb-dates');
-  const intervals = document.getElementById('pmb-intervals');
-
-  if (plantVal === 'all') {
-    title.textContent = 'National Fleet Overview';
-    sites.textContent = '17 Solar Sites';
-    coords.textContent = 'National PV Grid';
-    ori.textContent = 'Mixed (0°–298°)';
-    dates.textContent = `${plantDatesMap['all']?.length || 72} Dates (Jan–Oct 2024)`;
-    intervals.textContent = `${allData.length.toLocaleString()} records`;
-  } else {
-    const id = parseInt(plantVal);
-    const info = PLANT_INFO[id];
-    const dList = plantDatesMap[id] || [];
-    const count = allData.filter(r => r.location === id).length;
-    title.textContent = `Plant L${id} (${info.name})`;
-    sites.textContent = `Site ID L${id}`;
-    coords.textContent = `${info.lat.toFixed(4)}°, ${info.lon.toFixed(4)}°`;
-    ori.textContent = `${info.ori}° Azimuth / Alt ${info.alt}m`;
-    dates.textContent = `${dList.length} Dates in 2024`;
-    intervals.textContent = `${count.toLocaleString()} records`;
-  }
-}
-
-function updateDateDropdown() {
-  const plantVal = document.getElementById('plantSelect').value;
-  const rawDates = plantDatesMap[plantVal] || plantDatesMap['all'] || [];
-
-  let filteredDates = rawDates;
-  if (currentMonthFilter !== 'all') {
-    filteredDates = rawDates.filter(d => d.startsWith(currentMonthFilter));
-  }
-
-  const dateSel = document.getElementById('dateSelect');
-  const prevVal = dateSel.value;
-  dateSel.innerHTML = '';
-
-  if (filteredDates.length === 0) {
-    const opt = document.createElement('option');
-    opt.value = '';
-    opt.textContent = `No dates in this month for ${plantVal === 'all' ? 'Fleet' : 'L' + plantVal}`;
-    dateSel.appendChild(opt);
-    document.getElementById('dateCounter').textContent = '0 dates';
-    return;
-  }
-
-  filteredDates.forEach(d => {
-    const dt = new Date(d);
-    const dayName = dt.toLocaleDateString('en-US', { weekday: 'short' });
-    const opt = document.createElement('option');
-    opt.value = d;
-    opt.textContent = `${d} (${dayName})`;
-    dateSel.appendChild(opt);
-  });
-
-  document.getElementById('dateCounter').textContent = `${filteredDates.length} of ${rawDates.length} dates`;
-
-  // Select previous date if still valid, else select first valid
-  if (filteredDates.includes(prevVal)) {
-    dateSel.value = prevVal;
-  } else {
-    dateSel.value = filteredDates[0];
-  }
-
-  updateDateNavButtons();
-}
-
-function onDateSelectChange() {
-  updateDateNavButtons();
-  if (activeTab === 'fleet') renderFleetView();
-  else if (activeTab === 'year') renderYearView();
-  else if (activeTab === 'day') renderDayView();
-}
-
-function updateDateNavButtons() {
-  const dateSel = document.getElementById('dateSelect');
-  const idx = dateSel.selectedIndex;
-  const count = dateSel.options.length;
-
-  document.getElementById('btnPrevDate').disabled = (idx <= 0);
-  document.getElementById('btnNextDate').disabled = (idx >= count - 1 || count === 0);
-}
-
-function stepDate(delta) {
-  const dateSel = document.getElementById('dateSelect');
-  const newIdx = dateSel.selectedIndex + delta;
-  if (newIdx >= 0 && newIdx < dateSel.options.length) {
-    dateSel.selectedIndex = newIdx;
-    onDateSelectChange();
-  }
-}
-
-function triggerQuery() {
-  if (activeTab === 'fleet') renderFleetView();
-  else if (activeTab === 'year') renderYearView();
-  else if (activeTab === 'day') renderDayView();
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// RENDER TAB 1: FLEET OVERVIEW
-// ═══════════════════════════════════════════════════════════════════════════
-function renderFleetView() {
-  if (!allData.length) return;
-
-  const dateVal = document.getElementById('dateSelect').value;
-
-  // ── Per-slot median helper (missing-data fallback, no model retraining) ──
-  // When a plant has no records for the selected date, synthesise values
-  // by taking the median of each 10-minute time-slot across all other dates.
-  // This reuses outputs already stored in predictions_all.csv.
-  function syntheticPlantRows(plantId) {
-    const src = allData.filter(r => r.location === plantId);
-    if (!src.length) return [];
-    const slotMap = {};
-    src.forEach(r => {
-      const t = r.datetime ? r.datetime.substring(11, 16) : null;
-      if (!t) return;
-      if (!slotMap[t]) slotMap[t] = { cat: [], lgb: [], xgb: [], ens: [] };
-      slotMap[t].cat.push(r.catboost  || 0);
-      slotMap[t].lgb.push(r.lightgbm  || 0);
-      slotMap[t].xgb.push(r.xgboost   || 0);
-      slotMap[t].ens.push(r.ensemble   || 0);
-    });
-    const median = arr => {
-      if (!arr.length) return 0;
-      const s = [...arr].sort((a, b) => a - b);
-      const mid = Math.floor(s.length / 2);
-      return s.length % 2 !== 0 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
-    };
-    return Object.values(slotMap).map(slot => ({
-      catboost: median(slot.cat),
-      lightgbm: median(slot.lgb),
-      xgboost:  median(slot.xgb),
-      ensemble: median(slot.ens)
-    }));
-  }
-
-  // ── Filter allData to the selected date (or use full dataset if none selected) ──
-  const dateRows = dateVal
-    ? allData.filter(r => r.datetime && r.datetime.startsWith(dateVal))
-    : allData;
-
-  // ── Fleet-wide KPI calculations (all 17 plants for the selected date) ──
-  const kpiRows = dateRows.length ? dateRows : allData;
-  const totalRecords = kpiRows.length;
-  const meanPower  = (kpiRows.reduce((s, r) => s + (r.ensemble || 0), 0) / totalRecords).toFixed(1);
-  const peakPower  = Math.max(...kpiRows.map(r => r.ensemble || 0)).toFixed(1);
-  // Est energy: sum(mW × 10 min / 60 min / 1000) MWh
-  const totalMWh   = (kpiRows.reduce((s, r) => s + (r.ensemble || 0), 0) / 6000).toFixed(1);
-
-  document.getElementById('fl-records').textContent = totalRecords.toLocaleString();
-  document.getElementById('fl-avg').textContent     = meanPower;
-  document.getElementById('fl-peak').textContent    = peakPower;
-  document.getElementById('fl-energy').textContent  = totalMWh;
-
-  // ── Plant-by-plant summary (all 17 plants, filtered to selected date) ──
-  const plantSummaries = [];
-  for (let i = 1; i <= 17; i++) {
-    // Filter date-scoped rows for this plant
-    let pRows = dateRows.filter(r => r.location === i);
-
-    // Missing data: fill with synthetic values derived from historical model outputs
-    if (!pRows.length) {
-      pRows = syntheticPlantRows(i);
-    }
-    if (!pRows.length) continue;
-
-    const avgEns  = pRows.reduce((s, r) => s + (r.ensemble || 0), 0) / pRows.length;
-    const peakEns = Math.max(...pRows.map(r => r.ensemble || 0));
-    const dates   = plantDatesMap[i] || [];
-    const dailyKWh = (avgEns * 8).toFixed(0); // ~8 daylight hours
-
-    plantSummaries.push({
-      id:        i,
-      name:      PLANT_INFO[i].name,
-      coords:    `${PLANT_INFO[i].lat.toFixed(4)}°, ${PLANT_INFO[i].lon.toFixed(4)}°`,
-      ori:       `${PLANT_INFO[i].ori}°`,
-      alt:       `${PLANT_INFO[i].alt}m`,
-      avgPower:  avgEns.toFixed(1),
-      peakPower: peakEns.toFixed(1),
-      dailyKWh:  dailyKWh,
-      datesCount: dates.length,
-      rowsCount:  pRows.length
-    });
-  }
-
-  // Render Fleet Bar Chart
-  const labels   = plantSummaries.map(p => `L${p.id}`);
-  const avgData  = plantSummaries.map(p => parseFloat(p.avgPower));
-  const peakData = plantSummaries.map(p => parseFloat(p.peakPower));
-
-  if (fleetChartInst) fleetChartInst.destroy();
-  const ctx = document.getElementById('fleetChart').getContext('2d');
-  fleetChartInst = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Average Output (mW)',
-          data: avgData,
-          backgroundColor: 'rgba(139, 92, 246, 0.75)',
-          borderColor: '#8b5cf6',
-          borderWidth: 1,
-          borderRadius: 6
-        },
-        {
-          label: 'Peak Output (mW)',
-          data: peakData,
-          backgroundColor: 'rgba(245, 158, 11, 0.65)',
-          borderColor: '#f59e0b',
-          borderWidth: 1,
-          borderRadius: 6
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#0d1629',
-          borderColor: 'rgba(255,255,255,0.15)',
-          borderWidth: 1,
-          titleFont: { family: 'Inter', size: 12 },
-          bodyFont: { family: 'JetBrains Mono', size: 11 },
-          callbacks: {
-            label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)} mW`
-          }
-        }
-      },
-      scales: {
-        x: {
-          grid: { color: 'rgba(255,255,255,0.04)' },
-          ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 11 } }
-        },
-        y: {
-          grid: { color: 'rgba(255,255,255,0.04)' },
-          ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 11 }, callback: v => v + ' mW' }
-        }
-      }
-    }
-  });
-
-  // Render 17 Plant Cards
-  const grid = document.getElementById('plantsGrid');
-  grid.innerHTML = '';
-  plantSummaries.forEach(p => {
-    const card = document.createElement('div');
-    card.className = 'plant-card';
-    card.innerHTML = `
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
       <div class="plant-card-head">
         <span class="plant-badge">Plant L${p.id}</span>
         <span class="plant-dates-cnt">${p.datesCount} dates · ${p.rowsCount} records</span>
@@ -3404,7 +2278,6 @@ function renderFleetView() {
         </div>
       </div>
     `;
-<<<<<<< HEAD
         card.onclick = () => {
           document.getElementById('plantSelect').value = p.id;
           onPlantChange();
@@ -3419,22 +2292,6 @@ function renderFleetView() {
       plantSummaries.forEach(p => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-=======
-    card.onclick = () => {
-      document.getElementById('plantSelect').value = p.id;
-      onPlantChange();
-      switchTab('day');
-    };
-    grid.appendChild(card);
-  });
-
-  // Render Fleet Table
-  const tbody = document.getElementById('fleetTableBody');
-  tbody.innerHTML = '';
-  plantSummaries.forEach(p => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
       <td class="td-loc">Plant L${p.id}</td>
       <td>${p.coords}</td>
       <td>${p.ori}</td>
@@ -3445,7 +2302,6 @@ function renderFleetView() {
       <td>${p.datesCount} days (${p.rowsCount} pts)</td>
       <td><button class="plant-btn-action" onclick="viewPlantDay(${p.id})">Inspect ⚡</button></td>
     `;
-<<<<<<< HEAD
         tbody.appendChild(tr);
       });
     }
@@ -3648,210 +2504,6 @@ function renderFleetView() {
 
         const tr = document.createElement('tr');
         tr.innerHTML = `
-=======
-    tbody.appendChild(tr);
-  });
-}
-
-
-function viewPlantDay(plantId) {
-  document.getElementById('plantSelect').value = plantId;
-  onPlantChange();
-  switchTab('day');
-}
-
-function filterFleetTable() {
-  const q = document.getElementById('searchFleetTable').value.toLowerCase();
-  const rows = document.getElementById('fleetTableBody').getElementsByTagName('tr');
-  for (let r of rows) {
-    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// RENDER TAB 2: ENTIRE YEAR 2024 TIMELINE
-// ═══════════════════════════════════════════════════════════════════════════
-function renderYearView() {
-  if (!allData.length) return;
-  const plantVal = document.getElementById('plantSelect').value;
-  const isAll = plantVal === 'all';
-
-  const rows = isAll ? allData : allData.filter(r => r.location === parseInt(plantVal));
-  if (!rows.length) return;
-
-  document.getElementById('yr-plant-label').textContent = isAll ? 'All 17 Plants' : `Plant L${plantVal}`;
-  document.getElementById('yearChartTitle').textContent = isAll
-    ? `2024 Monthly Generation Profile — National Fleet (All 17 Plants)`
-    : `2024 Monthly Generation Profile — Plant L${plantVal}`;
-  document.getElementById('timelineChartTitle').textContent = isAll
-    ? `2024 All Forecast Dates Timeline — Fleet Progression (Jan – Oct 2024)`
-    : `2024 All Forecast Dates Timeline — Plant L${plantVal} Progression`;
-
-  // Aggregate by Month
-  const months = ['2024-01', '2024-02', '2024-03', '2024-04', '2024-05', '2024-06', '2024-07', '2024-08', '2024-09', '2024-10'];
-  const monthLabels = ['Jan 2024', 'Feb 2024', 'Mar 2024', 'Apr 2024', 'May 2024', 'Jun 2024', 'Jul 2024', 'Aug 2024', 'Sep 2024', 'Oct 2024'];
-  const catMonthly = [], lgbMonthly = [], xgbMonthly = [], ensMonthly = [];
-
-  let bestMonthName = '';
-  let bestMonthVal = -1;
-
-  months.forEach((m, idx) => {
-    const mRows = rows.filter(r => r.datetime.startsWith(m));
-    if (!mRows.length) {
-      catMonthly.push(0); lgbMonthly.push(0); xgbMonthly.push(0); ensMonthly.push(0);
-      return;
-    }
-    const catA = mRows.reduce((s, r) => s + (r.catboost || 0), 0) / mRows.length;
-    const lgbA = mRows.reduce((s, r) => s + (r.lightgbm || 0), 0) / mRows.length;
-    const xgbA = mRows.reduce((s, r) => s + (r.xgboost || 0), 0) / mRows.length;
-    const ensA = mRows.reduce((s, r) => s + (r.ensemble || 0), 0) / mRows.length;
-
-    catMonthly.push(parseFloat(catA.toFixed(1)));
-    lgbMonthly.push(parseFloat(lgbA.toFixed(1)));
-    xgbMonthly.push(parseFloat(xgbA.toFixed(1)));
-    ensMonthly.push(parseFloat(ensA.toFixed(1)));
-
-    if (ensA > bestMonthVal) {
-      bestMonthVal = ensA;
-      bestMonthName = monthLabels[idx];
-    }
-  });
-
-  document.getElementById('yr-best-month').textContent = bestMonthName || 'August';
-  document.getElementById('yr-best-month-val').textContent = `${bestMonthVal.toFixed(1)} mW average output`;
-
-  // Aggregate by Day across the entire year
-  const dayMap = {};
-  rows.forEach(r => {
-    const d = r.datetime.substring(0, 10);
-    if (!dayMap[d]) dayMap[d] = { count: 0, cat: 0, lgb: 0, xgb: 0, ens: 0, maxEns: 0, plants: new Set() };
-    dayMap[d].count++;
-    dayMap[d].cat += (r.catboost || 0);
-    dayMap[d].lgb += (r.lightgbm || 0);
-    dayMap[d].xgb += (r.xgboost || 0);
-    dayMap[d].ens += (r.ensemble || 0);
-    dayMap[d].plants.add(r.location);
-    if ((r.ensemble || 0) > dayMap[d].maxEns) dayMap[d].maxEns = r.ensemble;
-  });
-
-  const sortedDates = Object.keys(dayMap).sort();
-  document.getElementById('yr-active-dates').textContent = `${sortedDates.length} Target Forecast Dates in 2024`;
-
-  let peakDay = sortedDates[0];
-  let maxDayPeak = 0;
-  sortedDates.forEach(d => {
-    if (dayMap[d].maxEns > maxDayPeak) {
-      maxDayPeak = dayMap[d].maxEns;
-      peakDay = d;
-    }
-  });
-
-  document.getElementById('yr-peak-day').textContent = peakDay || '2024-07-22';
-  document.getElementById('yr-peak-day-val').textContent = `${maxDayPeak.toFixed(1)} mW peak output`;
-
-  // Render Year Monthly Chart
-  if (yearChartInst) yearChartInst.destroy();
-  const ctxYr = document.getElementById('yearChart').getContext('2d');
-  yearChartInst = new Chart(ctxYr, {
-    type: 'bar',
-    data: {
-      labels: monthLabels,
-      datasets: [
-        { label: 'CatBoost', data: catMonthly, backgroundColor: 'rgba(96,165,250,0.6)', borderColor: '#60a5fa', borderWidth: 1, borderRadius: 4 },
-        { label: 'LightGBM', data: lgbMonthly, backgroundColor: 'rgba(74,222,128,0.6)', borderColor: '#4ade80', borderWidth: 1, borderRadius: 4 },
-        { label: 'XGBoost', data: xgbMonthly, backgroundColor: 'rgba(251,191,36,0.6)', borderColor: '#fbbf24', borderWidth: 1, borderRadius: 4 },
-        { label: 'Ensemble', data: ensMonthly, backgroundColor: 'rgba(167,139,250,0.85)', borderColor: '#a78bfa', borderWidth: 1, borderRadius: 4 }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#0d1629',
-          borderColor: 'rgba(255,255,255,0.15)',
-          borderWidth: 1,
-          titleFont: { family: 'Inter', size: 12 },
-          bodyFont: { family: 'JetBrains Mono', size: 11 },
-          callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y.toFixed(1)} mW` }
-        }
-      },
-      scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#94a3b8', font: { family: 'Inter', size: 11 } } },
-        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 11 }, callback: v => v + ' mW' } }
-      }
-    }
-  });
-
-  // Render Daily Timeline Chart
-  const timelineLabels = sortedDates;
-  const timelineEns = sortedDates.map(d => (dayMap[d].ens / dayMap[d].count).toFixed(1));
-  const timelinePeak = sortedDates.map(d => dayMap[d].maxEns.toFixed(1));
-
-  if (timelineChartInst) timelineChartInst.destroy();
-  const ctxTl = document.getElementById('timelineChart').getContext('2d');
-  timelineChartInst = new Chart(ctxTl, {
-    type: 'line',
-    data: {
-      labels: timelineLabels,
-      datasets: [
-        {
-          label: 'Daily Average (mW)',
-          data: timelineEns,
-          borderColor: '#a78bfa',
-          backgroundColor: 'rgba(167,139,250,0.12)',
-          borderWidth: 2,
-          pointRadius: 2,
-          tension: 0.3,
-          fill: true
-        },
-        {
-          label: 'Daily Peak (mW)',
-          data: timelinePeak,
-          borderColor: '#f59e0b',
-          borderWidth: 1.5,
-          borderDash: [4, 4],
-          pointRadius: 1,
-          tension: 0.2
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#0d1629',
-          borderColor: 'rgba(255,255,255,0.15)',
-          borderWidth: 1,
-          titleFont: { family: 'Inter', size: 12 },
-          bodyFont: { family: 'JetBrains Mono', size: 11 }
-        }
-      },
-      scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 }, maxTicksLimit: 14 } },
-        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 11 }, callback: v => v + ' mW' } }
-      }
-    }
-  });
-
-  // Render Year Table
-  const tbody = document.getElementById('yearTableBody');
-  tbody.innerHTML = '';
-  sortedDates.forEach(d => {
-    const item = dayMap[d];
-    const catAvg = (item.cat / item.count).toFixed(1);
-    const lgbAvg = (item.lgb / item.count).toFixed(1);
-    const xgbAvg = (item.xgb / item.count).toFixed(1);
-    const ensAvg = (item.ens / item.count).toFixed(1);
-    const dt = new Date(d);
-    const dayOfWeek = dt.toLocaleDateString('en-US', { weekday: 'long' });
-
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
       <td class="td-loc">${d}</td>
       <td>${dayOfWeek}</td>
       <td>${item.plants.size} plant${item.plants.size > 1 ? 's' : ''}</td>
@@ -3862,7 +2514,6 @@ function renderYearView() {
       <td class="td-peak">${item.maxEns.toFixed(1)}</td>
       <td><button class="plant-btn-action" onclick="jumpToSingleDay('${d}')">Inspect Day ⚡</button></td>
     `;
-<<<<<<< HEAD
         tbody.appendChild(tr);
       });
     }
@@ -4066,211 +2717,6 @@ function renderYearView() {
       displayRows.forEach(r => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-=======
-    tbody.appendChild(tr);
-  });
-}
-
-function jumpToSingleDay(dateStr) {
-  const dateSel = document.getElementById('dateSelect');
-  if (![...dateSel.options].some(o => o.value === dateStr)) {
-    // reset filter
-    currentMonthFilter = 'all';
-    document.querySelectorAll('.month-pill').forEach(p => p.classList.remove('active'));
-    document.querySelector('.month-pill')?.classList.add('active');
-    updateDateDropdown();
-  }
-  dateSel.value = dateStr;
-  updateDateNavButtons();
-  switchTab('day');
-}
-
-function filterYearTable() {
-  const q = document.getElementById('searchYearTable').value.toLowerCase();
-  const rows = document.getElementById('yearTableBody').getElementsByTagName('tr');
-  for (let r of rows) {
-    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// RENDER TAB 3: SINGLE DAY DEEP-DIVE
-// ═══════════════════════════════════════════════════════════════════════════
-function renderDayView() {
-  if (!allData.length) return;
-
-  const plantVal = document.getElementById('plantSelect').value;
-  const isAll = plantVal === 'all';
-  const dateVal = document.getElementById('dateSelect').value;
-
-  if (!dateVal) {
-    document.getElementById('dayChartTitle').textContent = 'Please select a forecast date in the sidebar';
-    return;
-  }
-
-  // Filter rows for this date and plant
-  let rows = allData.filter(r => r.datetime && r.datetime.startsWith(dateVal));
-  if (!isAll) {
-    rows = rows.filter(r => r.location === parseInt(plantVal));
-  }
-  rows.sort((a, b) => a.datetime.localeCompare(b.datetime));
-
-  // ── Missing-data fallback: synthesise from existing model outputs ──
-  // If no rows exist for this plant+date, generate synthetic predictions
-  // using the median value per time-slot across all other dates for this
-  // plant. This reuses the ALREADY TRAINED model's outputs stored in
-  // predictions_all.csv — no model retraining occurs.
-  let isSynthetic = false;
-  if (!rows.length) {
-    isSynthetic = true;
-    // Define the standard 48 × 10-min intervals: 09:00 → 16:50
-    const timeSlots = [];
-    for (let h = 9; h <= 16; h++) {
-      for (let m = 0; m < 60; m += 10) {
-        if (h === 16 && m > 50) break;
-        timeSlots.push(`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`);
-      }
-    }
-
-    // Gather all data for this plant (all dates) to build per-slot medians
-    const plantRows = isAll
-      ? allData
-      : allData.filter(r => r.location === parseInt(plantVal));
-
-    // Group existing values by time-slot
-    const slotMap = {};
-    plantRows.forEach(r => {
-      const t = r.datetime ? r.datetime.substring(11, 16) : null;
-      if (!t) return;
-      if (!slotMap[t]) slotMap[t] = { cat: [], lgb: [], xgb: [], ens: [] };
-      slotMap[t].cat.push(r.catboost || 0);
-      slotMap[t].lgb.push(r.lightgbm || 0);
-      slotMap[t].xgb.push(r.xgboost || 0);
-      slotMap[t].ens.push(r.ensemble || 0);
-    });
-
-    const median = arr => {
-      if (!arr.length) return 0;
-      const s = [...arr].sort((a, b) => a - b);
-      const mid = Math.floor(s.length / 2);
-      return s.length % 2 !== 0 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
-    };
-
-    // Build synthetic rows for each time-slot
-    rows = timeSlots.map(t => ({
-      datetime: `${dateVal} ${t}`,
-      location: isAll ? 0 : parseInt(plantVal),
-      catboost:  parseFloat((median((slotMap[t] || { cat: [0] }).cat)).toFixed(2)),
-      lightgbm:  parseFloat((median((slotMap[t] || { lgb: [0] }).lgb)).toFixed(2)),
-      xgboost:   parseFloat((median((slotMap[t] || { xgb: [0] }).xgb)).toFixed(2)),
-      ensemble:  parseFloat((median((slotMap[t] || { ens: [0] }).ens)).toFixed(2))
-    }));
-
-    setStatus(true, `Synthetic forecast shown for ${isAll ? 'Fleet' : 'Plant L' + plantVal} on ${dateVal} (no raw data for this date)`);
-  }
-
-  // Set titles
-  const targetLabel = isAll ? 'National Fleet (All Plants Aggregated)' : `Plant L${plantVal} (${PLANT_INFO[parseInt(plantVal)].name})`;
-  document.getElementById('dayChartTitle').textContent = `Power Generation Curve — ${targetLabel} — ${dateVal}${isSynthetic ? ' [Synthetic]' : ''}`;
-  document.getElementById('dayTableTitle').textContent = `10-Minute Predictions — ${dateVal}${isSynthetic ? ' (Synthetic — model-derived)' : ''}`;
-  document.getElementById('dayTableSubtitle').textContent = `${rows.length} timestamps · 09:00 to 16:50${isSynthetic ? ' · Synthesised from existing model outputs' : ''}`;
-
-  // Aggregate by timestamp if "all" plants is selected, else direct rows
-  let displayRows = [];
-  if (isAll) {
-    const timeMap = {};
-    rows.forEach(r => {
-      const t = r.datetime.substring(11, 16);
-      if (!timeMap[t]) timeMap[t] = { time: t, cat: 0, lgb: 0, xgb: 0, ens: 0, count: 0 };
-      timeMap[t].count++;
-      timeMap[t].cat += (r.catboost || 0);
-      timeMap[t].lgb += (r.lightgbm || 0);
-      timeMap[t].xgb += (r.xgboost || 0);
-      timeMap[t].ens += (r.ensemble || 0);
-    });
-    const sortedTimes = Object.keys(timeMap).sort();
-    displayRows = sortedTimes.map(t => ({
-      datetime: `${dateVal} ${t}`,
-      locationName: 'Fleet Sum',
-      catboost: timeMap[t].cat,
-      lightgbm: timeMap[t].lgb,
-      xgboost:  timeMap[t].xgb,
-      ensemble: timeMap[t].ens
-    }));
-  } else {
-    displayRows = rows.map(r => ({
-      datetime: r.datetime,
-      locationName: `Plant L${r.location}`,
-      catboost: r.catboost,
-      lightgbm: r.lightgbm,
-      xgboost:  r.xgboost,
-      ensemble: r.ensemble
-    }));
-  }
-
-  // Update Day Metric Cards
-  const avg = arr => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(1) : '—';
-  const catAvg = avg(displayRows.map(r => r.catboost));
-  const lgbAvg = avg(displayRows.map(r => r.lightgbm));
-  const xgbAvg = avg(displayRows.map(r => r.xgboost));
-  const ensAvg = avg(displayRows.map(r => r.ensemble));
-
-  document.getElementById('mc-cat').textContent = catAvg;
-  document.getElementById('mc-lgb').textContent = lgbAvg;
-  document.getElementById('mc-xgb').textContent = xgbAvg;
-  document.getElementById('mc-ens').textContent = ensAvg;
-  document.getElementById('mc-ens-sub').textContent = isAll ? 'Combined fleet output (mW)' : 'Average daylight output (mW)';
-
-  // Render Day Chart
-  const labels = displayRows.map(r => r.datetime.substring(11, 16));
-  const catData = displayRows.map(r => r.catboost);
-  const lgbData = displayRows.map(r => r.lightgbm);
-  const xgbData = displayRows.map(r => r.xgboost);
-  const ensData = displayRows.map(r => r.ensemble);
-
-  if (dayChartInst) dayChartInst.destroy();
-  const ctxDay = document.getElementById('dayChart').getContext('2d');
-  dayChartInst = new Chart(ctxDay, {
-    type: 'line',
-    data: {
-      labels: labels,
-      datasets: [
-        { label: 'CatBoost', data: catData, borderColor: '#60a5fa', backgroundColor: 'rgba(96,165,250,0.06)', borderWidth: 2, pointRadius: 2, tension: 0.35 },
-        { label: 'LightGBM', data: lgbData, borderColor: '#4ade80', backgroundColor: 'rgba(74,222,128,0.06)', borderWidth: 2, pointRadius: 2, tension: 0.35 },
-        { label: 'XGBoost', data: xgbData, borderColor: '#fbbf24', backgroundColor: 'rgba(251,191,36,0.06)', borderWidth: 2, pointRadius: 2, tension: 0.35 },
-        { label: 'Ensemble', data: ensData, borderColor: '#a78bfa', backgroundColor: 'rgba(167,139,250,0.18)', borderWidth: 3.5, pointRadius: 3, tension: 0.35, fill: true }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#0d1629',
-          borderColor: 'rgba(255,255,255,0.15)',
-          borderWidth: 1,
-          titleFont: { family: 'Inter', size: 12 },
-          bodyFont: { family: 'JetBrains Mono', size: 11 },
-          callbacks: {
-            label: c => ` ${c.dataset.label}: ${c.parsed.y?.toFixed(2) ?? '—'} mW`
-          }
-        }
-      },
-      scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 }, maxTicksLimit: 12 } },
-        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 11 }, callback: v => v.toFixed(0) + ' mW' } }
-      }
-    }
-  });
-
-  // Render Day Table
-  const tbody = document.getElementById('dayTableBody');
-  tbody.innerHTML = '';
-  displayRows.forEach(r => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
       <td class="td-time">${r.datetime.substring(11, 16)}</td>
       <td class="td-loc">${r.locationName}</td>
       <td class="td-cat">${r.catboost?.toFixed(2) ?? '—'}</td>
@@ -4278,7 +2724,6 @@ function renderDayView() {
       <td class="td-xgb">${r.xgboost?.toFixed(2) ?? '—'}</td>
       <td class="td-ens">${r.ensemble?.toFixed(2) ?? '—'}</td>
     `;
-<<<<<<< HEAD
         tbody.appendChild(tr);
       });
     }
@@ -4874,53 +3319,3 @@ function renderDayView() {
 </body>
 
 </html>
-=======
-    tbody.appendChild(tr);
-  });
-}
-
-// ── UTILITIES ──
-function setStatus(ok, msg) {
-  const dot = document.getElementById('dataStatus');
-  dot.style.background = ok ? 'var(--green)' : 'var(--red)';
-  dot.style.boxShadow  = ok ? '0 0 8px var(--green)' : '0 0 8px var(--red)';
-  document.getElementById('statusLabel').textContent = msg;
-}
-
-function showLoader(on) {
-  document.getElementById('loader').style.display = on ? 'block' : 'none';
-}
-
-function exportCurrentViewCSV() {
-  if (!allData.length) return;
-  const plantVal = document.getElementById('plantSelect').value;
-  const dateVal  = document.getElementById('dateSelect').value;
-
-  let exportData = allData;
-  let filename = 'solar_predictions_all_2024.csv';
-
-  if (activeTab === 'day') {
-    exportData = allData.filter(r => r.datetime.startsWith(dateVal));
-    if (plantVal !== 'all') exportData = exportData.filter(r => r.location === parseInt(plantVal));
-    filename = `predictions_plant_${plantVal}_${dateVal}.csv`;
-  } else if (plantVal !== 'all') {
-    exportData = allData.filter(r => r.location === parseInt(plantVal));
-    filename = `predictions_plant_${plantVal}_full_year.csv`;
-  }
-
-  const csv = Papa.unparse(exportData);
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-// Initialize on page load
-loadData();
-</script>
-</body>
-</html>
->>>>>>> 5ad4edb873be4b2ff7e7d0a953e88f6c741dee3f
