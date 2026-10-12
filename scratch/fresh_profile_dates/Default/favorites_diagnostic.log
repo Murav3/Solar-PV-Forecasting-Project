@@ -1,0 +1,27 @@
+2026-10-09 18:14:25.824: [INFO] CurrentProfilePath: C:\Users\harin\Downloads\R_FINAL_REVIEW\Solar-PV-Forecasting-Project\scratch\fresh_profile_dates\Default
+2026-10-09 18:14:25.824: [INFO] Profiles total count: 1
+2026-10-09 18:14:25.824: [INFO] Profile: name=Profile 1 path=C:\Users\harin\Downloads\R_FINAL_REVIEW\Solar-PV-Forecasting-Project\scratch\fresh_profile_dates\Default lastActive=null
+2026-10-09 18:14:25.824: [INFO] LastUsedProfileDir: C:\Users\harin\Downloads\R_FINAL_REVIEW\Solar-PV-Forecasting-Project\scratch\fresh_profile_dates\Default
+2026-10-09 18:14:25.824: [INFO] VisibilityChanged: 0
+2026-10-09 18:14:25.841: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.843: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.846: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.848: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.849: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.851: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.852: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.855: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.856: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.857: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:25.884: [INFO] OnDoneLoading sync enabled: 0
+2026-10-09 18:14:25.884: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-09 18:14:25.884: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-09 18:14:25.884: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-09 18:14:25.986: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:28.855: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-09 18:14:28.861: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-09 18:14:28.867: [INFO] Primary account changed.
+2026-10-09 18:14:28.867: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-10-09 18:14:28.882: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-09 18:14:28.948: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-09 18:14:33.001: [INFO] Sync initialization duration: 3993ms
