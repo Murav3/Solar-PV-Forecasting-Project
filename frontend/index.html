@@ -2184,6 +2184,93 @@
       font-family: 'JetBrains Mono', monospace;
       font-weight: 700;
     }
+
+    /* ── SPATIAL PORTFOLIO SMOOTHING STYLES ── */
+    .spatial-banner {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0f172a 100%);
+      border: 1px solid #0284c7;
+      border-radius: 14px;
+      padding: 22px 26px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.15);
+    }
+    .spatial-badge {
+      font-size: 10px; font-weight: 800; letter-spacing: 0.8px;
+      text-transform: uppercase; color: #38bdf8;
+      background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.35);
+      padding: 3px 10px; border-radius: 6px; display: inline-block; margin-bottom: 8px;
+    }
+    .spatial-banner h2 { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 4px; }
+    .spatial-banner p { font-size: 12px; color: #94a3b8; max-width: 720px; line-height: 1.5; }
+    .spatial-kpi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px; margin-bottom: 22px;
+    }
+    .spatial-kpi {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .spatial-kpi .kpi-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .spatial-kpi .kpi-val { font-size: 22px; font-weight: 800; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+    .spatial-kpi .kpi-sub { font-size: 11px; color: var(--muted); }
+    .spatial-kpi.green .kpi-val { color: var(--green); }
+    .spatial-kpi.amber .kpi-val { color: var(--amber); }
+    .spatial-kpi.purple .kpi-val { color: var(--accent3); }
+    .spatial-section-title {
+      font-size: 14px; font-weight: 700; color: var(--text);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .spatial-section-title span { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; background: var(--bg-card2); border-radius: 6px; padding: 2px 8px; }
+    .spatial-chart-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px; margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .spatial-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    @media (max-width: 900px) { .spatial-two-col { grid-template-columns: 1fr; } }
+    .azimuth-plant-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 14px;
+    }
+    .azimuth-plant-card {
+      background: var(--bg-card2); border: 1px solid var(--border); border-radius: 10px;
+      padding: 10px 12px; display: flex; flex-direction: column; gap: 4px;
+    }
+    .azimuth-plant-card .ap-name { font-size: 11px; font-weight: 700; color: var(--text); }
+    .azimuth-plant-card .ap-azimuth { font-size: 17px; font-weight: 800; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+    .azimuth-plant-card .ap-meta { font-size: 10px; color: var(--muted); }
+    .azimuth-compass { display: inline-block; font-size: 11px; background: var(--bg-card3); border-radius: 4px; padding: 1px 5px; margin-left: 3px; }
+    .cushion-metric-banner {
+      background: linear-gradient(135deg, #134e4a, #064e3b); border: 1px solid #10b981;
+      border-radius: 14px; padding: 22px 28px; color: #ffffff;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px;
+      margin-bottom: 20px;
+    }
+    .cushion-main-val { font-size: 52px; font-weight: 900; color: #34d399; font-family: 'JetBrains Mono', monospace; line-height: 1; }
+    .cushion-formula {
+      background: rgba(255,255,255,0.08); border-radius: 10px; padding: 14px 18px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a7f3d0; line-height: 1.8;
+    }
+    .plant-selector-bar {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; align-items: center;
+    }
+    .plant-toggle-btn {
+      font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
+      border: 1px solid var(--border); background: var(--bg-card2); color: var(--muted);
+      cursor: pointer; transition: all 0.15s ease;
+    }
+    .plant-toggle-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .heatmap-container { overflow-x: auto; margin-top: 10px; }
+    .heatmap-table { border-collapse: collapse; font-size: 9.5px; }
+    .heatmap-table th, .heatmap-table td { width: 28px; height: 28px; text-align: center; border: 1px solid var(--border-subtle); font-family: 'JetBrains Mono', monospace; }
+    .heatmap-table th { background: var(--bg-card2); font-weight: 700; color: var(--text-dim); font-size: 9px; }
   </style>
 </head>
 
@@ -2218,6 +2305,9 @@
       </button>
       <button class="view-tab" id="tabMlops" onclick="switchTab('mlops')">
         🛡️ MLOps Governance & Observability
+      </button>
+      <button class="view-tab" id="tabSpatial" onclick="switchTab('spatial')">
+        🗺️ Spatial Portfolio Smoothing
       </button>
     </div>
 
@@ -3487,6 +3577,65 @@
         </div>
 
       </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- TAB 6: SPATIAL PORTFOLIO SMOOTHING                                      -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div class="view-content" id="viewSpatial">
+
+        <!-- Banner -->
+        <div class="spatial-banner">
+          <div>
+            <div class="spatial-badge">🗺️ SPATIAL PORTFOLIO ANALYTICS</div>
+            <h2>Spatial Portfolio Smoothing — 17-Plant Fleet Diversification</h2>
+            <p>Geographic distribution and azimuth diversity across 17 solar PV plants reduces fleet-level power variability. Aggregating spatially dispersed plants smooths individual plant volatility through natural temporal offsets in irradiance peaks.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+            <button class="btn-mlops-retrain" onclick="renderSpatialView()" style="background:linear-gradient(135deg,#0284c7,#0369a1);">⚡ Recalculate</button>
+          </div>
+        </div>
+
+        <!-- ① Fleet Smoothing Overview KPIs -->
+        <div class="spatial-section-title">① Fleet Smoothing Overview <span>KPI METRICS</span></div>
+        <div class="spatial-kpi-grid" id="spatialKpiGrid">
+          <div class="spatial-kpi"><div class="kpi-label">Total Plants</div><div class="kpi-val" id="spKpiPlants">—</div><div class="kpi-sub">Geographically distributed</div></div>
+          <div class="spatial-kpi"><div class="kpi-label">Combined Generation</div><div class="kpi-val" id="spKpiTotal">—</div><div class="kpi-sub">Sum over all plants</div></div>
+          <div class="spatial-kpi"><div class="kpi-label">Mean Plant CV</div><div class="kpi-val" id="spKpiMeanCV">—</div><div class="kpi-sub">Avg individual variability</div></div>
+          <div class="spatial-kpi green"><div class="kpi-label">Fleet CV</div><div class="kpi-val" id="spKpiFleetCV">—</div><div class="kpi-sub">Aggregated fleet variability</div></div>
+          <div class="spatial-kpi amber"><div class="kpi-label">Fleet Std Dev</div><div class="kpi-val" id="spKpiFleetStd">—</div><div class="kpi-sub">Fleet output std deviation</div></div>
+          <div class="spatial-kpi purple"><div class="kpi-label">Fleet Mean</div><div class="kpi-val" id="spKpiFleetMean">—</div><div class="kpi-sub">Average fleet output</div></div>
+        </div>
+
+        <!-- ② Individual vs Aggregated Generation Chart -->
+        <div class="spatial-chart-card">
+          <div class="spatial-section-title">② Individual vs Aggregated Generation <span>INTERACTIVE TIME-SERIES</span></div>
+          <div class="plant-selector-bar" id="spatialPlantToggleBar">
+            <!-- Filled by JS -->
+          </div>
+          <canvas id="spatialGenChart" height="100"></canvas>
+        </div>
+
+        <!-- ③ and ④ in two columns -->
+        <div class="spatial-two-col">
+          <!-- ③ Spatial Azimuth Analysis -->
+          <div class="spatial-chart-card" style="margin-bottom:0;">
+            <div class="spatial-section-title">③ Spatial Azimuth Analysis <span>17 PLANTS</span></div>
+            <canvas id="spatialAzimuthChart" height="220"></canvas>
+            <div class="azimuth-plant-grid" id="azimuthPlantGrid">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+
+          <!-- ④ Cross-Plant Correlation Heatmap -->
+          <div class="spatial-chart-card" style="margin-bottom:0;">
+            <div class="spatial-section-title">④ Cross-Plant Correlation Heatmap <span>17×17 PEARSON</span></div>
+            <div class="heatmap-container" id="correlationHeatmapContainer">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
     </main>
   </div>
 
@@ -3548,6 +3697,10 @@
         document.getElementById('tabMlops').classList.add('active');
         document.getElementById('viewMlops').classList.add('active');
         renderMlopsView();
+      } else if (tabId === 'spatial') {
+        document.getElementById('tabSpatial').classList.add('active');
+        document.getElementById('viewSpatial').classList.add('active');
+        renderSpatialView();
       }
     }
 
@@ -6792,6 +6945,314 @@
     if (window.location.hash === '#mlops' || window.location.search.includes('tab=mlops')) {
       setTimeout(() => switchTab('mlops'), 350);
     }
+    if (window.location.hash === '#spatial' || window.location.search.includes('tab=spatial')) {
+      setTimeout(() => switchTab('spatial'), 350);
+    }
+  </script>
+
+  <script>
+  // ══════════════════════════════════════════════════════════════════════════════
+  // SPATIAL PORTFOLIO SMOOTHING — Full Analytics Engine
+  // ══════════════════════════════════════════════════════════════════════════════
+
+  let spatialGenChartInst = null;
+  let spatialAzimuthChartInst = null;
+  let spatialActivePlants = new Set([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]);
+  let spatialRendered = false;
+
+  // ── Utility: mean and stddev ──
+  function spMean(arr) {
+    if (!arr || arr.length === 0) return 0;
+    return arr.reduce((a,b) => a + b, 0) / arr.length;
+  }
+  function spStd(arr) {
+    if (!arr || arr.length < 2) return 0;
+    const m = spMean(arr);
+    return Math.sqrt(arr.reduce((s,v) => s + (v-m)**2, 0) / arr.length);
+  }
+  function spCV(arr) {
+    const m = spMean(arr);
+    return m === 0 ? 0 : spStd(arr) / m;
+  }
+
+  // ── Pearson correlation between two arrays ──
+  function pearsonCorr(a, b) {
+    const n = Math.min(a.length, b.length);
+    if (n < 2) return 0;
+    const ma = spMean(a.slice(0,n)), mb = spMean(b.slice(0,n));
+    let num = 0, da = 0, db = 0;
+    for (let i = 0; i < n; i++) {
+      num += (a[i]-ma)*(b[i]-mb);
+      da += (a[i]-ma)**2;
+      db += (b[i]-mb)**2;
+    }
+    return (da === 0 || db === 0) ? 0 : num / Math.sqrt(da*db);
+  }
+
+  // ── Cardinal direction from azimuth ──
+  function aziToDir(deg) {
+    const dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+    return dirs[Math.round(deg/22.5) % 16];
+  }
+
+  // ── Color for heatmap cell ──
+  function corrColor(val) {
+    // val in [-1, 1]; blue=negative, white=zero, green=positive
+    if (val >= 0) {
+      const g = Math.round(163 + val*92);
+      const r = Math.round(209 - val*160);
+      const b = Math.round(209 - val*160);
+      return `rgb(${r},${g},${b})`;
+    } else {
+      const absV = Math.abs(val);
+      const r = Math.round(209 + absV*46);
+      const g = Math.round(209 - absV*160);
+      const b = Math.round(209 + absV*46);
+      return `rgb(${r},${g},${b})`;
+    }
+  }
+
+  function renderSpatialView() {
+    if (!allData || allData.length === 0) {
+      document.getElementById('viewSpatial').innerHTML += '<p style="color:var(--muted);padding:20px;">⏳ Data not yet loaded. Please wait for CSV to load.</p>';
+      return;
+    }
+
+    // ── 1. Build per-plant time-series from allData ──
+    const plantIds = Object.keys(PLANT_INFO).map(Number).sort((a,b)=>a-b);
+    const plantSeries = {}; // plantId -> sorted array of ensemble values
+    const plantTimestamps = {}; // plantId -> array of timestamp strings
+
+    plantIds.forEach(pid => {
+      const rows = allData
+        .filter(r => Number(r.location) === pid && r.ensemble != null)
+        .sort((a,b) => String(a.datetime).localeCompare(String(b.datetime)));
+      plantSeries[pid] = rows.map(r => Number(r.ensemble));
+      plantTimestamps[pid] = rows.map(r => r.datetime);
+    });
+
+    // Find the common timestamp set (shortest series as reference)
+    const refPid = plantIds.reduce((best, pid) => plantSeries[pid].length < plantSeries[best].length ? pid : best, plantIds[0]);
+    const refTimestamps = plantTimestamps[refPid];
+    const T = refTimestamps.length;
+
+    // Trim all series to ref length
+    plantIds.forEach(pid => {
+      plantSeries[pid] = plantSeries[pid].slice(0, T);
+    });
+
+    // ── 2. Compute per-plant stats ──
+    const plantMeans = {}, plantStds = {}, plantCVs = {};
+    plantIds.forEach(pid => {
+      plantMeans[pid] = spMean(plantSeries[pid]);
+      plantStds[pid]  = spStd(plantSeries[pid]);
+      plantCVs[pid]   = spCV(plantSeries[pid]);
+    });
+
+    // ── 3. Fleet aggregated series (sum across all plants per time step) ──
+    const fleetSeries = [];
+    for (let t = 0; t < T; t++) {
+      fleetSeries.push(plantIds.reduce((s, pid) => s + (plantSeries[pid][t] || 0), 0));
+    }
+    const fleetMean = spMean(fleetSeries);
+    const fleetStd  = spStd(fleetSeries);
+    const fleetCV   = spCV(fleetSeries);
+    const meanIndCV = spMean(plantIds.map(pid => plantCVs[pid]));
+
+    // ── 4. Totals ──
+    const totalGen = plantIds.reduce((s,pid) => s + plantMeans[pid], 0);
+
+    // ── 5. Render KPIs ──
+    document.getElementById('spKpiPlants').textContent   = plantIds.length;
+    document.getElementById('spKpiTotal').textContent    = totalGen.toFixed(1) + ' kW';
+    document.getElementById('spKpiMeanCV').textContent   = (meanIndCV*100).toFixed(2) + '%';
+    document.getElementById('spKpiFleetCV').textContent  = (fleetCV*100).toFixed(2) + '%';
+    document.getElementById('spKpiFleetStd').textContent = fleetStd.toFixed(1) + ' kW';
+    document.getElementById('spKpiFleetMean').textContent = fleetMean.toFixed(1) + ' kW';
+
+    // ── 7. Plant toggle buttons ──
+    const toggleBar = document.getElementById('spatialPlantToggleBar');
+    if (toggleBar && !spatialRendered) {
+      toggleBar.innerHTML = '<span style="font-size:11px;font-weight:700;color:var(--muted);margin-right:4px;">Plants:</span>';
+      plantIds.forEach(pid => {
+        const btn = document.createElement('button');
+        btn.className = 'plant-toggle-btn active';
+        btn.id = 'spToggle_' + pid;
+        btn.textContent = 'L' + pid;
+        btn.onclick = () => {
+          if (spatialActivePlants.has(pid)) { spatialActivePlants.delete(pid); btn.classList.remove('active'); }
+          else { spatialActivePlants.add(pid); btn.classList.add('active'); }
+          updateSpatialGenChart(plantIds, plantSeries, refTimestamps, fleetSeries);
+        };
+        toggleBar.appendChild(btn);
+      });
+      // All/None buttons
+      const allBtn = document.createElement('button');
+      allBtn.className = 'plant-toggle-btn'; allBtn.textContent = 'All';
+      allBtn.style.cssText = 'background:var(--accent);color:#fff;border-color:var(--accent);margin-left:6px;';
+      allBtn.onclick = () => { plantIds.forEach(pid => { spatialActivePlants.add(pid); document.getElementById('spToggle_'+pid).classList.add('active'); }); updateSpatialGenChart(plantIds, plantSeries, refTimestamps, fleetSeries); };
+      const noneBtn = document.createElement('button');
+      noneBtn.className = 'plant-toggle-btn'; noneBtn.textContent = 'None';
+      noneBtn.style.cssText = 'background:var(--bg-card3);color:var(--muted);margin-left:2px;';
+      noneBtn.onclick = () => { spatialActivePlants.clear(); plantIds.forEach(pid => document.getElementById('spToggle_'+pid).classList.remove('active')); updateSpatialGenChart(plantIds, plantSeries, refTimestamps, fleetSeries); };
+      toggleBar.appendChild(allBtn);
+      toggleBar.appendChild(noneBtn);
+    }
+
+    // ── 8. Individual vs Fleet chart ──
+    updateSpatialGenChart(plantIds, plantSeries, refTimestamps, fleetSeries);
+
+    // ── 9. Azimuth polar chart ──
+    renderAzimuthChart(plantIds, plantMeans);
+
+    // ── 10. Azimuth plant cards ──
+    const azGrid = document.getElementById('azimuthPlantGrid');
+    if (azGrid) {
+      azGrid.innerHTML = '';
+      plantIds.forEach(pid => {
+        const info = PLANT_INFO[pid];
+        const card = document.createElement('div');
+        card.className = 'azimuth-plant-card';
+        card.innerHTML = `<div class="ap-name">${info.name}</div>
+          <div class="ap-azimuth">${info.ori}°<span class="azimuth-compass">${aziToDir(info.ori)}</span></div>
+          <div class="ap-meta">Alt: ${info.alt}m · Mean: ${plantMeans[pid].toFixed(1)} kW</div>`;
+        azGrid.appendChild(card);
+      });
+    }
+
+    // ── 11. Correlation heatmap ──
+    renderCorrelationHeatmap(plantIds, plantSeries);
+
+    spatialRendered = true;
+  }
+
+  // Sample down for chart performance: take every Nth point to show ~200 points
+  function sampleSeries(arr, maxPts) {
+    if (arr.length <= maxPts) return arr;
+    const step = Math.ceil(arr.length / maxPts);
+    return arr.filter((_, i) => i % step === 0);
+  }
+
+  function updateSpatialGenChart(plantIds, plantSeries, timestamps, fleetSeries) {
+    const maxPts = 200;
+    const step = Math.ceil(timestamps.length / maxPts);
+    const sampledLabels = timestamps.filter((_, i) => i % step === 0);
+    // Show date portion only for label readability
+    const labels = sampledLabels.map(t => String(t).substring(0, 10));
+
+    const palette = [
+      '#3b82f6','#f59e0b','#10b981','#ef4444','#8b5cf6','#06b6d4','#ec4899',
+      '#84cc16','#f97316','#6366f1','#14b8a6','#d946ef','#0ea5e9','#a3e635',
+      '#fb923c','#a78bfa','#38bdf8'
+    ];
+
+    const datasets = [];
+    plantIds.forEach((pid, idx) => {
+      if (!spatialActivePlants.has(pid)) return;
+      datasets.push({
+        label: 'L' + pid,
+        data: sampleSeries(plantSeries[pid], maxPts),
+        borderColor: palette[idx % palette.length],
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        pointRadius: 0,
+        tension: 0.3
+      });
+    });
+    // Fleet aggregate — always shown
+    datasets.push({
+      label: '⚡ Fleet Aggregate',
+      data: sampleSeries(fleetSeries, maxPts),
+      borderColor: '#0f172a',
+      backgroundColor: 'rgba(15,23,42,0.08)',
+      borderWidth: 2.5,
+      pointRadius: 0,
+      tension: 0.3,
+      fill: true
+    });
+
+    const ctx = document.getElementById('spatialGenChart');
+    if (!ctx) return;
+    if (spatialGenChartInst) { spatialGenChartInst.destroy(); spatialGenChartInst = null; }
+    spatialGenChartInst = new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets },
+      options: {
+        responsive: true,
+        animation: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: true, position: 'top', labels: { boxWidth: 10, font: { size: 10 } } },
+          tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${Number(ctx.parsed.y).toFixed(1)} kW` } }
+        },
+        scales: {
+          x: { ticks: { maxTicksLimit: 12, maxRotation: 30, font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.04)' } },
+          y: { title: { display: true, text: 'Power (kW)', font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.06)' } }
+        }
+      }
+    });
+  }
+
+  function renderAzimuthChart(plantIds, plantMeans) {
+    // Polar area chart — one segment per plant showing azimuth & mean output
+    const labels = plantIds.map(pid => `L${pid} (${PLANT_INFO[pid].ori}°)`);
+    const data   = plantIds.map(pid => Math.max(plantMeans[pid], 0.01));
+    const palette = [
+      'rgba(59,130,246,0.7)','rgba(245,158,11,0.7)','rgba(16,185,129,0.7)','rgba(239,68,68,0.7)',
+      'rgba(139,92,246,0.7)','rgba(6,182,212,0.7)','rgba(236,72,153,0.7)','rgba(132,204,22,0.7)',
+      'rgba(249,115,22,0.7)','rgba(99,102,241,0.7)','rgba(20,184,166,0.7)','rgba(217,70,239,0.7)',
+      'rgba(14,165,233,0.7)','rgba(163,230,53,0.7)','rgba(251,146,60,0.7)','rgba(167,139,250,0.7)',
+      'rgba(56,189,248,0.7)'
+    ];
+    const ctx = document.getElementById('spatialAzimuthChart');
+    if (!ctx) return;
+    if (spatialAzimuthChartInst) { spatialAzimuthChartInst.destroy(); spatialAzimuthChartInst = null; }
+    spatialAzimuthChartInst = new Chart(ctx, {
+      type: 'polarArea',
+      data: { labels, datasets: [{ data, backgroundColor: palette, borderWidth: 1 }] },
+      options: {
+        responsive: true,
+        animation: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.parsed.r.toFixed(1)} kW mean` } }
+        },
+        scales: { r: { ticks: { font: { size: 9 } } } }
+      }
+    });
+  }
+
+  function renderCorrelationHeatmap(plantIds, plantSeries) {
+    const container = document.getElementById('correlationHeatmapContainer');
+    if (!container) return;
+
+    // Build matrix
+    const n = plantIds.length;
+    const matrix = [];
+    for (let i = 0; i < n; i++) {
+      matrix[i] = [];
+      for (let j = 0; j < n; j++) {
+        matrix[i][j] = i === j ? 1.0 : pearsonCorr(plantSeries[plantIds[i]], plantSeries[plantIds[j]]);
+      }
+    }
+
+    // Build HTML table
+    let html = '<table class="heatmap-table"><thead><tr><th></th>';
+    plantIds.forEach(pid => { html += `<th>L${pid}</th>`; });
+    html += '</tr></thead><tbody>';
+    for (let i = 0; i < n; i++) {
+      html += `<tr><th>L${plantIds[i]}</th>`;
+      for (let j = 0; j < n; j++) {
+        const v = matrix[i][j];
+        const bg = corrColor(v);
+        const textColor = Math.abs(v) > 0.6 ? '#fff' : '#1e293b';
+        html += `<td style="background:${bg};color:${textColor};" title="L${plantIds[i]}×L${plantIds[j]}: ${v.toFixed(3)}">${v.toFixed(2)}</td>`;
+      }
+      html += '</tr>';
+    }
+    html += '</tbody></table>';
+    container.innerHTML = html;
+  }
   </script>
 
   <!-- ═════════════════════════════════════════════════════════════════════════ -->
