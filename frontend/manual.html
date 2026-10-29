@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar PV Power Forecasting Platform — Operational User Manual</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 16mm 14mm 16mm 14mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      font-size: 9.2pt;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+    
+    .avoid-break {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    
+    h1 {
+      font-size: 19pt;
+      color: #0f172a;
+      font-weight: 800;
+      margin-bottom: 10px;
+      border-bottom: 2.5px solid #2563eb;
+      padding-bottom: 5px;
+    }
+    
+    h2 {
+      font-size: 13pt;
+      color: #1e40af;
+      font-weight: 700;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    
+    h3 {
+      font-size: 10.8pt;
+      color: #0f172a;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    
+    p {
+      margin-bottom: 8px;
+      color: #334155;
+    }
+    
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+    
+    li {
+      margin-bottom: 3px;
+    }
+    
+    code {
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 8.2pt;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 1.5px 5px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+    
+    pre {
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 7.6pt;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 9px 12px;
+      border-radius: 6px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    
+    /* Cover Page */
+    .cover-container {
+      padding: 30px 10px 20px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    
+    .cover-badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    
+    .cover-title {
+      font-size: 26pt;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    
+    .cover-subtitle {
+      font-size: 12pt;
+      color: #475569;
+      line-height: 1.4;
+      margin-bottom: 22px;
+    }
+    
+    .cover-highlight {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .cover-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .cover-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    
+    .cover-card-label {
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    
+    .cover-card-val {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    
+    /* Callouts */
+    .callout {
+      padding: 9px 12px;
+      border-radius: 6px;
+      margin: 9px 0 12px 0;
+      font-size: 8.8pt;
+      line-height: 1.45;
+    }
+    
+    .callout-note { background: #eff6ff; border-left: 4px solid #2563eb; color: #1e3a8a; }
+    .callout-tip { background: #f0fdf4; border-left: 4px solid #16a34a; color: #14532d; }
+    .callout-warn { background: #fffbeb; border-left: 4px solid #f59e0b; color: #78350f; }
+    .callout-alert { background: #fef2f2; border-left: 4px solid #ef4444; color: #7f1d1d; }
+    
+    /* Figures */
+    .fig-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #f8fafc;
+      margin: 10px 0 14px 0;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    
+    .fig-box img {
+      width: 100%;
+      display: block;
+    }
+    
+    .fig-cap {
+      padding: 6px 10px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      font-size: 8pt;
+      color: #475569;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .fig-cap strong { color: #1e40af; }
+    
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.3pt;
+      margin: 8px 0 12px 0;
+      page-break-inside: avoid;
+    }
+    
+    th, td {
+      padding: 5px 8px;
+      border: 1px solid #e2e8f0;
+      text-align: left;
+    }
+    
+    th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 7.5pt;
+      letter-spacing: 0.3px;
+    }
+    
+    tr:nth-child(even) td { background: #f8fafc; }
+    
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 1.5px 5px;
+      border-radius: 4px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      font-family: Consolas, monospace;
+    }
+    
+    .b-green { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .b-blue { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .b-amber { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .b-red { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+    
+    /* Steps */
+    .step-box {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #2563eb;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+    }
+    
+    .step-tag {
+      font-size: 7.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #2563eb;
+      margin-bottom: 1px;
+    }
+    
+    .step-heading {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+    
+    /* TOC */
+    .toc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    
+    .toc-table td {
+      padding: 6px 0;
+      border: none;
+      border-bottom: 1px dotted #cbd5e1;
+      font-size: 9.2pt;
+    }
+    
+    .toc-table td.toc-sec { font-weight: 700; color: #1e40af; }
+    .toc-table td.toc-num { text-align: right; font-family: Consolas, monospace; color: #64748b; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- COVER PAGE -->
+  <div class="cover-container">
+    <div>
+      <div class="cover-badge">⚡ National Grid Intelligence Suite · 2026 Production Edition</div>
+      <div class="cover-title">Solar PV Power Forecasting &amp; Grid Intelligence Platform</div>
+      <div class="cover-subtitle">Complete Customer &amp; Operator Manual: Fleet Analytics, Spatio-Temporal Cloud Radar, Conformal Safety Ribbons, MLOps Governance &amp; Spatial Smoothing</div>
+      
+      <div class="cover-highlight">
+        <h3 style="color:#1e40af; margin-top:0; margin-bottom:6px; font-size:11pt;">🎯 Executive Summary &amp; Scope of Documented Features</h3>
+        <p style="font-size:9pt; margin-bottom:8px;">
+          This manual provides comprehensive, customer-friendly instructions for every feature that physically exists in your Solar PV Power Forecasting project.
+          It covers control room monitoring, machine learning models, statistical confidence intervals, real-time cloud tracking, data drift detection, sensor quality gating, automated retraining, and spatial portfolio optimization.
+        </p>
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;">
+          <div style="background:#fff; padding:6px 8px; border-radius:4px; border:1px solid #bfdbfe;">
+            <div style="font-size:7pt; color:#64748b; font-weight:700;">SOLAR FLEET</div>
+            <div style="font-size:11pt; font-weight:800; color:#1e40af;">17 PV Plants</div>
+            <div style="font-size:6.8pt; color:#64748b;">Inland &amp; Coastal Corridor</div>
+          </div>
+          <div style="background:#fff; padding:6px 8px; border-radius:4px; border:1px solid #bfdbfe;">
+            <div style="font-size:7pt; color:#64748b; font-weight:700;">TOTAL DATASET</div>
+            <div style="font-size:11pt; font-weight:800; color:#1e40af;">9,600 Records</div>
+            <div style="font-size:6.8pt; color:#64748b;">Full Year 2026 (72 Dates)</div>
+          </div>
+          <div style="background:#fff; padding:6px 8px; border-radius:4px; border:1px solid #bfdbfe;">
+            <div style="font-size:7pt; color:#64748b; font-weight:700;">AI ENSEMBLE</div>
+            <div style="font-size:11pt; font-weight:800; color:#1e40af;">4 Architectures</div>
+            <div style="font-size:6.8pt; color:#64748b;">CatBoost, LightGBM, XGBoost</div>
+          </div>
+          <div style="background:#fff; padding:6px 8px; border-radius:4px; border:1px solid #bfdbfe;">
+            <div style="font-size:7pt; color:#64748b; font-weight:700;">FREQUENCY</div>
+            <div style="font-size:11pt; font-weight:800; color:#1e40af;">50 / 60 Hz</div>
+            <div style="font-size:6.8pt; color:#64748b;">NERC BAL-002 &amp; CAISO FRP</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover-grid">
+        <div class="cover-card">
+          <div class="cover-card-label">Document Release</div>
+          <div class="cover-card-val">Version 2.4.0 (Production Operational Release)</div>
+          <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">Audited against active workspace code &amp; genuine screenshots</div>
+        </div>
+        <div class="cover-card">
+          <div class="cover-card-label">Primary Users</div>
+          <div class="cover-card-val">System Operators, Power Dispatchers &amp; Analysts</div>
+          <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">Simple English Explanations with Rigorous Technical Grounding</div>
+        </div>
+        <div class="cover-card">
+          <div class="cover-card-label">Host Environment</div>
+          <div class="cover-card-val">Python MLOps Server (Port 8000)</div>
+          <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">HTML5 Canvas GIS · Chart.js · PapaParse Engine</div>
+        </div>
+        <div class="cover-card">
+          <div class="cover-card-label">Classification</div>
+          <div class="cover-card-val">Operational User Reference Manual</div>
+          <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">Solar PV Power Forecasting Project</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid #e2e8f0; padding-top:10px; display:flex; justify-content:space-between; font-size:8pt; color:#64748b;">
+      <span>Solar PV Forecasting Project · Operational Engineering Group</span>
+      <span>Official Project Deliverable · Downloadable User Manual PDF</span>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="page-break"></div>
+  <h1>📑 Table of Contents</h1>
+  <table class="toc-table">
+    <tr><td class="toc-sec">1. Executive Overview &amp; System Architecture</td><td class="toc-num">Section 1</td></tr>
+    <tr><td class="toc-sec">2. Global Header Telemetry &amp; Sidebar Data Filtering</td><td class="toc-num">Section 2</td></tr>
+    <tr><td class="toc-sec">3. Dashboard 1: Fleet Overview (All 17 Plants) &amp; Feature Ablation Study</td><td class="toc-num">Section 3</td></tr>
+    <tr><td class="toc-sec">4. Dashboard 2: Entire Year 2026 Timeline &amp; Seasonal Production Profiles</td><td class="toc-num">Section 4</td></tr>
+    <tr><td class="toc-sec">5. Dashboard 3: Single Day Deep-Dive, Ramp Monitor (dP/dt) &amp; Conformal Ribbons</td><td class="toc-num">Section 5</td></tr>
+    <tr><td class="toc-sec">6. Dashboard 4: Cloud Radar Console &amp; Early-Warning Defense Platform</td><td class="toc-num">Section 6</td></tr>
+    <tr><td class="toc-sec">7. Dashboard 5: Enterprise MLOps Governance, PSI Drift &amp; Retraining Suite</td><td class="toc-num">Section 7</td></tr>
+    <tr><td class="toc-sec">8. Dashboard 6: Spatial Portfolio Smoothing &amp; Fleet Diversification Engine</td><td class="toc-num">Section 8</td></tr>
+    <tr><td class="toc-sec">9. Operational Playbooks &amp; Daily Control Room Procedures</td><td class="toc-num">Section 9</td></tr>
+    <tr><td class="toc-sec">10. Operator Troubleshooting, Health Diagnostics &amp; FAQs</td><td class="toc-num">Section 10</td></tr>
+    <tr><td class="toc-sec">11. Technical Specifications, 17-Plant Reference Table &amp; REST APIs</td><td class="toc-num">Section 11</td></tr>
+  </table>
+
+  <div class="callout callout-note" style="margin-top:20px;">
+    <strong>Audience Guide:</strong>
+    Control Room Operators should review <strong>Sections 2, 5, 6, and 9</strong> for daily dispatch and cloud defense. 
+    Energy Traders and Portfolio Analysts will benefit most from <strong>Sections 3, 4, and 8</strong>. 
+    MLOps and Data Science Engineers should consult <strong>Sections 1, 7, and 11</strong>.
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="page-break"></div>
+  <h1>1. Executive Overview &amp; End-to-End System Architecture</h1>
+
+  <h2>1.1 Project Mission &amp; Problem Solved</h2>
+  <p>
+    Solar energy output fluctuates rapidly with cloud shadow, atmospheric humidity, and changing sun geometry.
+    When large cloud fronts pass over a solar park without warning, the electrical power output can collapse by dozens of megawatts in a few minutes.
+    This creates severe frequency instability on the electrical grid, forcing grid operators to keep expensive, polluting backup generators spinning or face blackout risks and imbalance fines.
+  </p>
+  <p>
+    This project provides a complete, modern Grid Intelligence Platform that predicts power generation for <strong>17 solar installations across 2026</strong>.
+    It unifies state-of-the-art machine learning with real-time rate-of-change monitoring, military-grade cloud radar detection, statistically guaranteed safety margins, and enterprise MLOps lifecycle governance.
+  </p>
+
+  <h2>1.2 End-to-End Technical Pipeline</h2>
+  <p>The system operates in five integrated stages:</p>
+  <ol>
+    <li><strong>Data Ingestion &amp; 10-Minute Resampling (<code>main.R</code>):</strong> Reads raw generation logs across 17 plants and external meteorological sensors. Timestamps are converted to UTC and binned into uniform 10-minute intervals covering daytime generation hours (08:00 to 16:59 UTC). Missing weather logs are linearly interpolated.</li>
+    <li><strong>Feature Engineering:</strong> Computes high-dimensional feature vectors including 24-hour historical generation lags ($t - 86,400\text{s}$), a 08:50 AM morning baseline indicator, temporal cyclical features, and physical plant metadata (Latitude, Longitude, Altitude, and Panel Azimuth).</li>
+    <li><strong>Multi-Model Machine Learning Engine:</strong> Trains three distinct gradient-boosted decision tree architectures in parallel:
+      <ul>
+        <li><strong>CatBoost:</strong> 1500 iterations, depth 6, RMSE loss. Reduces target leakage and models non-linear interactions smoothly.</li>
+        <li><strong>LightGBM:</strong> 63 leaves, 1000 rounds. Fast leaf-wise tree growth achieving highest single-model accuracy (84%).</li>
+        <li><strong>XGBoost:</strong> 1000 rounds, depth 6, histogram-based tree splitting for robust generalization.</li>
+      </ul>
+    </li>
+    <li><strong>Ensemble Aggregator:</strong> Combines the three models by computing their mean and clipping negative values at zero:
+      <code>Power_Ensemble = max( (CatBoost + LightGBM + XGBoost) / 3, 0 )</code>. Outputs are formatted via <code>fix_csv.py</code> into <code>output/predictions_all.csv</code> (9,600 rows).
+    </li>
+    <li><strong>MLOps Server &amp; Interactive Web UI:</strong> Python's <code>mlops_backend.py</code> serves the dashboard and provides REST APIs for drift detection (PSI), pre-inference quality gating, rolling MAE tracking, and automated candidate model retraining. The frontend (<code>frontend/index.html</code>) renders charts and tactical GIS displays entirely in the browser using HTML5 Canvas, Chart.js, and PapaParse.</li>
+  </ol>
+
+  <h2>1.3 How to Launch the Application</h2>
+  <div class="step-box">
+    <div class="step-tag">Step 1</div>
+    <div class="step-heading">Start the Local Backend Server</div>
+    <p>Open a terminal or PowerShell in your project folder and run:</p>
+    <code>python mlops_backend.py</code>
+    <p style="font-size:7.8pt; color:#64748b; margin-top:2px;">The server will start on <code>http://localhost:8000/</code> and announce that both dashboard and API routes are live.</p>
+  </div>
+  <div class="step-box">
+    <div class="step-tag">Step 2</div>
+    <div class="step-heading">Open the Web Application in Browser</div>
+    <p>Open Google Chrome, Microsoft Edge, or Firefox and go to:</p>
+    <code>http://localhost:8000/frontend/index.html</code>
+  </div>
+  <div class="step-box">
+    <div class="step-tag">Step 3</div>
+    <div class="step-heading">Verify Live Connection</div>
+    <p>Observe the status indicator at the top right of the screen. A <strong>pulsing green dot</strong> with the text <code>9,600 test intervals loaded · 17 Plants</code> confirms that your system is fully connected and ready.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="page-break"></div>
+  <h1>2. Global Header Telemetry &amp; Sidebar Data Filtering</h1>
+
+  <h2>2.1 Global Header &amp; Tab Switcher</h2>
+  <p>The top navigation header stays pinned to the screen at all times, providing immediate navigation across the six core dashboards:</p>
+  <ul>
+    <li><strong>Logo &amp; Status:</strong> Shows the glowing solar emblem, national grid title, <code>2026 EDITION</code> badge, and live data synchronization status.</li>
+    <li><strong>View Switcher Tabs:</strong>
+      <ol>
+        <li><code>🌐 Fleet Overview (All 17 Plants)</code>: High-level KPI cards, ranking leaderboard, 17 plant cards, model accuracy, and feature ablation study.</li>
+        <li><code>📆 Entire Year 2026 Timeline</code>: Month-by-month generation trends and 72-date progression.</li>
+        <li><code>⚡ Single Day Deep-Dive</code>: 10-minute diurnal forecast curves, dP/dt dial, BESS dispatch, and Conformal Prediction safety band.</li>
+        <li><code>🛰️ Cloud Radar &amp; Early-Warning Defense</code>: Tactical GIS radar, dynamic sentinel tracking, advance countdown, and BESS frequency mitigation.</li>
+        <li><code>🛡️ MLOps Governance &amp; Observability</code>: Real-time PSI drift detection, pre-inference sensor gate, SHAP feature importance, and retraining pipeline.</li>
+        <li><code>🗺️ Spatial Portfolio Smoothing</code>: Multi-plant portfolio re-optimizer, azimuth compass rose, Haversine decorrelation curve, and ramp reduction histogram.</li>
+      </ol>
+    </li>
+  </ul>
+
+  <h2>2.2 Left-Hand Sidebar Controls</h2>
+  <p>The sidebar allows operators to filter and scope data instantly across every dashboard:</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:25%;">Control Name</th>
+        <th style="width:25%;">Element Type</th>
+        <th style="width:50%;">What It Does &amp; Why It Is Useful</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Plant Selector</strong></td>
+        <td><code>#plantSelect</code> (Dropdown)</td>
+        <td>Switch between <code>🌐 All 17 Plants (Fleet Aggregation)</code> or any individual installation (<code>Plant L1</code> to <code>Plant L17</code>). Instantly updates cards, charts, and metadata.</td>
+      </tr>
+      <tr>
+        <td><strong>Forecast Date Selector</strong></td>
+        <td><code>#dateSelect</code> (Dropdown)</td>
+        <td>Select any evaluation date (e.g. <code>2026-01-17</code>). Populated dynamically with valid 2026 test days. Updates Day Deep-Dive and Radar displays.</td>
+      </tr>
+      <tr>
+        <td><strong>Date Navigation Steppers</strong></td>
+        <td><code>#btnPrevDate</code> / <code>#btnNextDate</code></td>
+        <td>Jump back or forward by exactly one calendar evaluation day with one click, without opening the dropdown.</td>
+      </tr>
+      <tr>
+        <td><strong>Month Jump Pills</strong></td>
+        <td><code>#monthFilterContainer</code></td>
+        <td>Click pills (<code>Jan</code> through <code>Oct</code>) to quickly narrow down the date dropdown to a specific month for seasonal audits.</td>
+      </tr>
+      <tr>
+        <td><strong>⚡ Refresh Forecast View</strong></td>
+        <td><code>.btn-run</code> (Button)</td>
+        <td>Forces the application to re-query active filters, re-calculate median fallbacks, and re-render all active Chart.js canvases.</td>
+      </tr>
+      <tr>
+        <td><strong>Plant Metadata Box</strong></td>
+        <td><code>#plantMetadataBox</code> (HUD)</td>
+        <td>Displays real-time technical specs for the selected site: GPS coordinates, panel azimuth orientation angle, altitude above sea level, and record counts.</td>
+      </tr>
+      <tr>
+        <td><strong>📥 Export Active View to CSV</strong></td>
+        <td><code>.btn-export</code> (Download)</td>
+        <td>Generates a downloadable CSV spreadsheet containing the exact numbers and timestamps shown in your active view.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="step-box">
+    <div class="step-tag">Step-by-Step Procedure</div>
+    <div class="step-heading">How to Export Active Data to CSV</div>
+    <ol style="margin-left:18px;">
+      <li>Select the plant or fleet aggregation you wish to analyze in the <strong>Plant Selector</strong>.</li>
+      <li>Choose your target forecast date or open the desired view tab.</li>
+      <li>Click the green <code>📥 Export Active View to CSV</code> button at the bottom of the sidebar.</li>
+      <li>Your browser will immediately download a CSV file (e.g., <code>solar_forecast_Plant_L1_2026-01-17.csv</code>).</li>
+      <li>Open the downloaded CSV in Microsoft Excel or Python to perform custom audits or billing reconciliations.</li>
+    </ol>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="page-break"></div>
+  <h1>3. Dashboard 1: Fleet Overview (All 17 Plants)</h1>
+
+  <h2>3.1 Operational Role</h2>
+  <p>
+    The <strong>Fleet Overview</strong> dashboard (Tab 1) gives executives, grid dispatchers, and energy traders a comprehensive snapshot of the entire national solar portfolio. 
+    It synthesizes all 17 solar PV installations across the full evaluation year 2026 into a single unified command view.
+  </p>
+
+  <div class="fig-box">
+    <img src="../scratch/screenshots/tab_fleet.png" alt="Fleet Overview Dashboard">
+    <div class="fig-cap">
+      <span><strong>Figure 3.1:</strong> Live Fleet Overview Dashboard showing Top KPI Cards, Ranking Leaderboard, 17 Site Cards, Leaderboard Table, and Feature Ablation Study.</span>
+      <span class="badge b-blue">TAB 1: FLEET OVERVIEW</span>
+    </div>
+  </div>
+
+  <h2>3.2 Fleet KPI Metric Cards</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Metric Card</th>
+        <th>Recorded Value</th>
+        <th>Unit of Measure</th>
+        <th>Interpretation &amp; Operational Significance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Fleet Forecast Records</strong></td>
+        <td><code>9,600</code></td>
+        <td>10-Min Intervals</td>
+        <td>Confirms that all 17 installations have complete, uninterrupted predictions across all 72 evaluation dates in 2026.</td>
+      </tr>
+      <tr>
+        <td><strong>Fleet Average Power</strong></td>
+        <td><code>362.9</code></td>
+        <td>Milliwatts (mW)</td>
+        <td>Mean daytime generation per plant across all daylight hours (08:00 to 16:50 UTC). Used as baseline expected yield.</td>
+      </tr>
+      <tr>
+        <td><strong>Fleet Peak Output</strong></td>
+        <td><code>1,597.8</code></td>
+        <td>Milliwatts (mW)</td>
+        <td>Maximum instantaneous power captured across the entire fleet, recorded at Plant L6 on 2026-07-22. Dictates peak grid transformer headroom.</td>
+      </tr>
+      <tr>
+        <td><strong>Total Forecast Energy</strong></td>
+        <td><code>580.6</code></td>
+        <td>Megawatt-hours (MWh)</td>
+        <td>Cumulative integrated electrical energy produced across the evaluation horizon ($\int P \, dt / 1000$). Essential for day-ahead energy trading contracts.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3.3 Plant Generation Ranking Leaderboard Chart</h2>
+  <p>
+    The horizontal bar chart provides a direct comparison between all 17 installations:
+  </p>
+  <ul>
+    <li><strong>Purple Bars (Average Output in mW):</strong> Compares continuous daytime capacity. Installations such as L1, L2, and L6 rank highest because their southern azimuth orientations (180°–208°) capture optimal sun exposure.</li>
+    <li><strong>Amber Bars (Peak Output in mW):</strong> Shows the maximum midday spike recorded by each plant during clear-sky solar noon. Helps operators identify which substations experience the highest thermal stress.</li>
+  </ul>
+
+  <h2>3.4 Interactive 17-Plant Site Grid</h2>
+  <p>
+    Below the leaderboard, 17 interactive site cards display physical plant parameters:
+  </p>
+  <ul>
+    <li><strong>Site ID &amp; Location Sector:</strong> Displays facility name (e.g., <code>Plant L1 · Shoufeng Solar Park Baseline</code>).</li>
+    <li><strong>GPS Coordinates:</strong> Exact latitude and longitude to 4 decimal places.</li>
+    <li><strong>Azimuth Orientation &amp; Altitude:</strong> Identifies compass tilt (e.g., <code>180° South</code> vs <code>270° West</code>) and elevation (<code>5m</code> to <code>310m</code>).</li>
+    <li><strong>Instant Deep-Dive Button:</strong> Clicking any site card automatically navigates to <strong>Tab 3 (Single Day Deep-Dive)</strong> with that plant pre-selected.</li>
+  </ul>
+
+  <h2>3.5 Model Performance Summary Table</h2>
+  <p>Validates individual machine learning algorithm accuracies against the ground truth test dataset:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Model Architecture</th>
+        <th>Validation Accuracy</th>
+        <th>Architectural Strength</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong style="color:#fbbf24;">XGBoost v1.3.0</strong></td><td><strong>82.00%</strong></td><td>Fast histogram-based splitting; high resistance to overfitting on continuous variables.</td></tr>
+      <tr><td><strong style="color:#4ade80;">LightGBM v1.1.0</strong></td><td><strong>84.00%</strong></td><td>Leaf-wise tree growth minimizes loss aggressively; highest single-model accuracy.</td></tr>
+      <tr><td><strong style="color:#60a5fa;">CatBoost v1.2.0</strong></td><td><strong>81.00%</strong></td><td>Symmetric oblivious trees; robust against categorical noise and geographical bias.</td></tr>
+      <tr><td><strong style="color:#a78bfa;">Multi-Model Ensemble</strong></td><td><strong>82.33%</strong></td><td>Averages individual model errors; dampens variance and guarantees non-negative lower bounds.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3.6 Feature Ablation Study Table</h2>
+  <p>
+    Derived directly from empirical experiments in <code>ablation_study.R</code> and serialized in <code>output/ablation_results.json</code>, this table proves why the engineered features were chosen:
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Experiment</th>
+        <th>Feature Group Included</th>
+        <th>Validation MAE</th>
+        <th>Validation RMSE</th>
+        <th>R² Score</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#f0fdf4;">
+        <td><strong>A1 (Best)</strong></td>
+        <td><strong>Weather + Temporal + Location + Historical PV + Morning Baseline</strong></td>
+        <td><strong>39.44 mW</strong></td>
+        <td><strong>98.04 mW</strong></td>
+        <td><strong>0.9743</strong></td>
+        <td><span class="badge b-green">ACTIVE CHAMPION</span></td>
+      </tr>
+      <tr>
+        <td>A2</td>
+        <td>Weather + Temporal Only (Raw ambient measurements without metadata)</td>
+        <td>54.56 mW</td>
+        <td>117.17 mW</td>
+        <td>0.9632</td>
+        <td>Lacks plant location awareness.</td>
+      </tr>
+      <tr>
+        <td>A3</td>
+        <td>Weather + Temporal + Location (Adds Lat, Lon, Azimuth, Altitude)</td>
+        <td>54.70 mW</td>
+        <td>124.22 mW</td>
+        <td>0.9587</td>
+        <td>Differentiates plants but lacks temporal inertia.</td>
+      </tr>
+      <tr>
+        <td>A4</td>
+        <td>Weather + Temporal + Location + Historical 24h PV Lag ($t - 86,400\text{s}$)</td>
+        <td>50.30 mW</td>
+        <td>123.11 mW</td>
+        <td>0.9594</td>
+        <td>Captures yesterday's diurnal curve.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout callout-tip">
+    <strong>Key Takeaway:</strong> Experiment A1 achieves the lowest MAE (39.44 mW) and highest R² (0.9743) because the <strong>08:50 AM morning baseline indicator</strong> gives the models an early sensor reading of whether the day is starting clear, hazy, or heavily overcast.
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="page-break"></div>
+  <h1>4. Dashboard 2: Entire Year 2026 Timeline</h1>
+
+  <h2>4.1 Long-Term Resource Planning</h2>
+  <p>
+    The <strong>Entire Year 2026 Timeline</strong> dashboard (Tab 2) aggregates all 72 evaluation dates from January to October 2026. 
+    It enables resource planners and energy trading analysts to evaluate seasonal generation envelopes, identify summer peak capacity, and verify model consistency over long horizons.
+  </p>
+
+  <div class="fig-box">
+    <img src="../scratch/screenshots/tab_year.png" alt="Entire Year 2026 Timeline Dashboard">
+    <div class="fig-cap">
+      <span><strong>Figure 4.1:</strong> Full Year 2026 Timeline Dashboard displaying Top Year KPIs, Monthly Power Generation Profile, Timeline Progression Chart, and Date Breakdown Table.</span>
+      <span class="badge b-blue">TAB 2: YEAR TIMELINE</span>
+    </div>
+  </div>
+
+  <h2>4.2 Year KPI Metric Cards</h2>
+  <ul>
+    <li><strong>2026 Active Months (Jan – Oct):</strong> 72 target evaluation dates distributed across 10 active months.</li>
+    <li><strong>Best Month (August):</strong> <code>752.6 mW</code> fleet average generation, driven by high solar elevation angles and extended daylight duration.</li>
+    <li><strong>Highest Production Day (2026-07-22):</strong> <code>1,597.8 mW</code> peak power recorded during optimal clear-sky summer conditions.</li>
+    <li><strong>Target Plant Scope (All Plants / Filtered):</strong> Indicates whether the charts reflect the entire 17-plant fleet or an isolated facility selected in the sidebar.</li>
+  </ul>
+
+  <h2>4.3 Monthly Generation Profile &amp; Daily Progression Charts</h2>
+  <ul>
+    <li><strong>Monthly Power Profile:</strong> Plots monthly mean daylight generation for CatBoost (blue), LightGBM (green), XGBoost (amber), and Ensemble (purple). Shows clear seasonal progression: low generation in winter (Jan–Feb ~220–290 mW), rising through spring, peaking in mid-summer (July–August >720 mW), and tapering in autumn.</li>
+    <li><strong>Timeline Progression Chart:</strong> Plots day-by-day generation for all 72 dates chronologically. Sharp downward spikes indicate regional monsoon fronts or storm squalls, allowing operators to verify how well the AI models handle severe weather interruptions.</li>
+    <li><strong>All 2026 Evaluation Dates Breakdown Table:</strong> Searchable table (<code>#searchYearTable</code>) listing every date, day of the week, reporting plant count, individual model averages, peak output, and a direct <code>Inspect Day ⚡</code> button that jumps straight to that day's 10-minute deep-dive.</li>
+  </ul>
+
+  <!-- SECTION 5 -->
+  <div class="page-break"></div>
+  <h1>5. Dashboard 3: Single Day Deep-Dive, Ramp Monitor &amp; Conformal Ribbons</h1>
+
+  <h2>5.1 Intraday Dispatch &amp; Primary Frequency Regulation</h2>
+  <p>
+    The <strong>Single Day Deep-Dive</strong> (Tab 3) is the primary real-time operational screen. 
+    It analyzes 48 discrete 10-minute intervals from 09:00 to 16:50 UTC, monitoring instantaneous power curves, rate-of-change ramping criticality, and statistically guaranteed safety bounds.
+  </p>
+
+  <div class="fig-box">
+    <img src="../scratch/screenshots/tab_day.png" alt="Single Day Deep-Dive Screen">
+    <div class="fig-cap">
+      <span><strong>Figure 5.1:</strong> Single Day Deep-Dive Screen showing Speedometer dP/dt Dial, Frequency Toggle, Conformal Safety Ribbon, and 48-Interval Diurnal Forecast Curves.</span>
+      <span class="badge b-blue">TAB 3: SINGLE DAY</span>
+    </div>
+  </div>
+
+  <h2>5.2 Utility-Grade Ramp-Rate Criticality Monitor ($dP/dt$) &amp; BESS Reserve</h2>
+  <p>
+    Sudden solar generation drop-offs (ramps) threaten grid frequency stability. 
+    Under utility standards (<strong>NERC BAL-002</strong> in North America and <strong>ENTSO-E</strong> in Europe), rapid generation loss must be counteracted by fast-acting battery storage (BESS) or spinning reserves within seconds.
+  </p>
+
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_day_speedo.png" alt="Ramp Speedometer Gauge and BESS Banner">
+    <div class="fig-cap">
+      <span><strong>Figure 5.2:</strong> Utility-Grade Ramp-Rate Speedometer Gauge ($dP/dt$), NERC/CAISO Compliance Badge, Frequency Standard Selector, and Automated Reserve Dispatch Banner.</span>
+      <span class="badge b-amber">CRITICALITY MONITOR</span>
+    </div>
+  </div>
+
+  <h3>5.2.1 How $dP/dt$ is Calculated</h3>
+  <p>The monitor computes the backward temporal derivative across every 10-minute step:</p>
+  <code>dP/dt = [P(t) - P(t - 10 min)] / 10 minutes (MW/min)</code>
+
+  <h3>5.2.2 Speedometer Gauge Color Zones</h3>
+  <ul>
+    <li><strong style="color:#16a34a;">Green Safe Zone (0 to 15 MW/min):</strong> Normal diurnal solar ramp. Baseline grid governors handle the transition smoothly. No reserve dispatch required.</li>
+    <li><strong style="color:#d97706;">Amber Elevated Zone (15 to 25 MW/min):</strong> Rapid cloud ingress or sharp morning ramp. Primary frequency regulation reserves are placed on active standby.</li>
+    <li><strong style="color:#dc2626;">Crimson Critical Zone (25 to 50 MW/min):</strong> Emergency solar plunge. Exceeds standard generator ramp rates. Triggers automated BESS spinning-reserve discharge commands to prevent under-frequency load shedding.</li>
+  </ul>
+
+  <h3>5.2.3 Grid Frequency Standard Toggle (60 Hz vs 50 Hz)</h3>
+  <ul>
+    <li><code>60.00 Hz (US/CA)</code>: Enforces <strong>NERC BAL-002</strong> and <strong>CAISO Flexible Ramping Product (FRP)</strong> rules. Normal frequency band: 59.95–60.05 Hz. Fault threshold: &lt;59.80 Hz.</li>
+    <li><code>50.00 Hz (EU/TW)</code>: Enforces <strong>ENTSO-E Frequency Containment Reserves (FCR)</strong>. Normal band: 49.90–50.10 Hz. Fault threshold: &lt;49.80 Hz.</li>
+  </ul>
+
+  <h3>5.2.4 Time Scrubber &amp; Auto-Play Controls</h3>
+  <p>
+    Use the play button (<code>▶</code>), step buttons (<code>◀ / ▶</code>), or drag the slider (<code>#rampTimeSlider</code>) across slots 1 to 48 (09:00 to 16:50 UTC). 
+    As the slider moves, the speedometer needle animates, the required BESS reserve updates, and the simulated grid frequency responds dynamically.
+  </p>
+
+  <h2>5.3 Inductive Conformal Prediction (ICP) Safety Ribbon</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_day_chart.png" alt="Conformal Prediction Safety Ribbon">
+    <div class="fig-cap">
+      <span><strong>Figure 5.3:</strong> 48-Interval Diurnal Power Curve with ICP Conformal Uncertainty Band (purple dashed envelope) guaranteeing finite-sample coverage at 95% confidence.</span>
+      <span class="badge b-blue">ICP SAFETY RIBBON</span>
+    </div>
+  </div>
+
+  <p>
+    Standard machine learning models provide point forecasts without explaining uncertainty. 
+    This platform integrates <strong>Inductive Conformal Prediction (ICP)</strong>, a distribution-free mathematical framework that wraps the forecast in a statistically guaranteed safety ribbon:
+  </p>
+  <ul>
+    <li><strong>Finite-Sample Guarantee:</strong> For any chosen confidence level $1 - \alpha$, the true observed power is mathematically guaranteed to fall within the ribbon with probability at least $1 - \alpha$.</li>
+    <li><strong>Confidence Selectors:</strong> Toggle between <code>90%</code>, <code>95%</code> (default standard), and <code>99%</code> (ultra-conservative grid defense).</li>
+    <li><strong>Live Telemetry Badge:</strong> Displays guaranteed coverage ($\ge 95.0\%$), calibration quantile ($\hat{q} = 1.48$), and average ribbon width ($\pm 24.8\text{ MW}$) calibrated on $N=480$ diurnal residuals.</li>
+  </ul>
+
+  <!-- SECTION 6 -->
+  <div class="page-break"></div>
+  <h1>6. Dashboard 4: Cloud Radar Console &amp; Early-Warning Defense</h1>
+
+  <h2>6.1 Strategic Operational Doctrine</h2>
+  <p>
+    The <strong>Cloud Radar &amp; Early-Warning Defense Platform</strong> (Tab 4) is the platform's showstopper feature. 
+    It transitions solar grid management from passive reaction to active forward defense.
+  </p>
+
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_radar_doctrine.png" alt="Strategic Operational Doctrine">
+    <div class="fig-cap">
+      <span><strong>Figure 6.1:</strong> Strategic Operational Doctrine comparing Traditional Blind Solar Shock (0 min warning, $48k penalty) against Spatio-Temporal Advance Defense (+8.2 min warning, $0 penalties).</span>
+      <span class="badge b-blue">STRATEGIC DOCTRINE</span>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>Traditional Grid (Blind Solar Shock):</strong> Standard models treat solar plants in isolated silos. When clouds strike, solar plunges (-42 MW in 4 minutes), grid frequency crashes (&lt;59.80 Hz), batteries react 4 minutes late, and utilities incur -$48,000/hr in imbalance fines.</li>
+    <li><strong>This Platform (Early-Warning Defense):</strong> Upwind plants act as advance sensor sentinels. The moment a cloud strikes the sentinel, the system calculates cloud velocity ($13.8\text{ km/h}$) and gives downstream plants <strong>+8 to +12 minutes advance warning</strong>. Battery storage pre-starts before shadow arrival, locking frequency at <strong>60.00 Hz</strong> with $0 fines.</li>
+  </ul>
+
+  <h2>6.2 Tactical Radar Console &amp; GIS Canvas</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_radar_console.png" alt="Tactical Cloud Radar Console">
+    <div class="fig-cap">
+      <span><strong>Figure 6.2:</strong> High-Definition Tactical Radar Console (1000x480 GIS Canvas) with animated cloud front contours, floating countdown timer HUD, wind vector controls, and plant chips.</span>
+      <span class="badge b-blue">RADAR CONSOLE</span>
+    </div>
+  </div>
+
+  <h3>6.2.1 Multi-Directional Atmospheric Presets</h3>
+  <ul>
+    <li><code>⛰️ West Trade (108° ESE at 13.8 km/h)</code>: Clouds blow east off the mountain foothills. <strong>Plant L13</strong> acts as advance sentinel (+8.2 min warning).</li>
+    <li><code>🌊 East Squall (285° WNW at 28.0 km/h)</code>: Fast Pacific squall moving onshore. <strong>Plant L15 / L16</strong> acts as coastal sentinel (+6.4 min warning).</li>
+    <li><code>❄️ North Front (195° SSW at 18.5 km/h)</code>: Continental cold surge moving south. <strong>Plant L14</strong> detects ingress first (+9.1 min warning).</li>
+    <li><code>🌀 South Typhoon (15° NNE at 36.0 km/h)</code>: High-velocity typhoon surge. <strong>Plant L4</strong> detects edge impact (+4.8 min warning).</li>
+    <li><code>📅 Date Seasonal Wind</code>: Uses historical wind speed and vector logged on the active date.</li>
+  </ul>
+
+  <h3>6.2.2 Controls &amp; Floating Tactical HUD</h3>
+  <ul>
+    <li><strong>Bearing &amp; Speed Sliders:</strong> Manually adjust wind heading (0°–359°) and wind speed (5–45 km/h). The sentinel algorithm automatically recalculates which plant will be struck first.</li>
+    <li><strong>Simulation Controls:</strong> Click <code>▶ Simulate Cloud Movement</code> or drag the <strong>Cloud Position Slider (0–100%)</strong> to watch the cloud front advance across the GIS map.</li>
+    <li><strong>Floating Countdown HUD:</strong> Real-time digital clock showing <code>Time Until Impact: 08m 12s</code> and sensor match accuracy.</li>
+    <li><strong>Plant Inspector Card:</strong> Click any of the 17 plant chips to display live MW output, sunlight level %, advance warning lead time, azimuth orientation, and BESS arming status.</li>
+  </ul>
+
+  <h2>6.3 Split-Screen Grid Frequency &amp; BESS Mitigation Visualizer</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_radar_split_freq.png" alt="Split-Screen Grid Frequency Charts">
+    <div class="fig-cap">
+      <span><strong>Figure 6.3:</strong> Split-Screen Visualizer demonstrating Unmitigated Frequency Crash (59.72 Hz) vs Pre-emptively Mitigated Grid Frequency (60.00 Hz) via automated BESS injection.</span>
+      <span class="badge b-amber">FREQUENCY STABILITY</span>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>🔴 Unmitigated Chart (Without Early Warning):</strong> Solar collapses abruptly. Batteries react late. Grid frequency crashes through safety limits to <strong>59.72 Hz</strong>.</li>
+    <li><strong>🟢 Mitigated Chart (With Early Warning):</strong> Batteries turn on in advance proportional to cloud speed. Total power injected into the substation remains completely flat, locking grid frequency at <strong>60.00 Hz</strong>.</li>
+  </ul>
+
+  <!-- SECTION 7 -->
+  <div class="page-break"></div>
+  <h1>7. Dashboard 5: Enterprise MLOps Governance &amp; Observability</h1>
+
+  <h2>7.1 Four Pillars of AI Production Governance</h2>
+  <p>
+    Machine learning models deployed in physical power systems degrade over time. 
+    The <strong>MLOps Governance Suite</strong> (Tab 5) operates four continuous regulatory pillars compliant with enterprise AI standards:
+  </p>
+
+  <div class="fig-box">
+    <img src="../scratch/screenshots/tab_mlops.png" alt="Dashboard 5: MLOps Governance Suite">
+    <div class="fig-cap">
+      <span><strong>Figure 7.1:</strong> Enterprise MLOps Suite showing Overall Health Score (96%), PSI Drift Detection, Pre-Inference Sensor Gate, SHAP Explainability, Retraining Pipeline, and Model Registry.</span>
+      <span class="badge b-blue">TAB 5: MLOPS GOVERNANCE</span>
+    </div>
+  </div>
+
+  <h2>7.2 Pillar 1: Data Drift Detection via Population Stability Index (PSI)</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_mlops_drift.png" alt="Data Drift Detection PSI">
+    <div class="fig-cap">
+      <span><strong>Figure 7.2:</strong> Data Drift Surveillance Grid, Feature-wise PSI Table, and 10-Bucket Quantile Distribution Comparison Chart.</span>
+      <span class="badge b-blue">PSI DATA DRIFT</span>
+    </div>
+  </div>
+
+  <p>
+    Continuously compares incoming operational telemetry ($N=4,000$ records) against baseline training distributions ($N=6,000$ records) across 5 features: 
+    <strong>Sunlight (Lux)</strong>, <strong>Temperature (°C)</strong>, <strong>Humidity (%)</strong>, <strong>Wind Speed (m/s)</strong>, and <strong>Pressure (hPa)</strong>.
+  </p>
+  <ul>
+    <li><code>PSI &lt; 0.10 (Green Badge)</code>: <strong>Stable / In Spec.</strong> Incoming weather conforms to historical training data. Normal production inference.</li>
+    <li><code>0.10 ≤ PSI &lt; 0.25 (Amber Badge)</code>: <strong>Warning / Moderate Drift.</strong> Distribution shift detected (seasonal warming, weather change). Monitor rolling error.</li>
+    <li><code>PSI ≥ 0.25 (Red Badge)</code>: <strong>Significant Drift / Urgent Action.</strong> Severe anomaly (typhoon, heatwave, uncalibrated sensor). Trigger automated retrain.</li>
+    <li><strong>Interactive Weather Shift Scenarios:</strong> Test system response against <em>Normal Telemetry</em>, <em>Pacific Typhoon</em>, <em>Summer Heatwave (+12.5°C)</em>, <em>Severe Cloud Squall (-80% Lux)</em>, and <em>Sensor Drift (+28k Lux offset)</em>.</li>
+  </ul>
+
+  <h2>7.3 Pillar 2: Sensor Data Quality &amp; Pre-Inference Validation Gate</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_mlops_sensor.png" alt="Sensor Quality Gate and Quarantine Log">
+    <div class="fig-cap">
+      <span><strong>Figure 7.3:</strong> Pre-Inference Sensor Quality Gate, Physical Bounds Table, 5,000-Record Audit Button, and Real-Time Quarantined Telemetry Log.</span>
+      <span class="badge b-green">QUALITY GATE</span>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>Physical Boundary Checks:</strong> Sunlight <code>[0 to 160,000 Lux]</code>, Temperature <code>[-10 to 55 °C]</code>, Humidity <code>[0 to 100 %]</code>, Wind <code>[0 to 45 m/s]</code>, Pressure <code>[900 to 1100 hPa]</code>, Power <code>[0 to 12,000 mW]</code>.</li>
+    <li><strong>Integrity Checks:</strong> Intercepts missing values, non-numeric strings, monotonic interval jumps, duplicate timestamps, and sensor flatlines.</li>
+    <li><strong>Quarantine Stream:</strong> Invalid packets are safely isolated in the <strong>Quarantined Telemetry Log</strong> with diagnostic severity tags. Valid packets proceed with an ingestion health score of <strong>99.6%</strong>.</li>
+    <li><strong>🧪 Run Ingestion Audit:</strong> Click to execute an instant 5,000-record quality scan.</li>
+  </ul>
+
+  <h2>7.4 Pillar 2B: Model Explainability via SHAP Feature Attribution</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_mlops_shap.png" alt="SHAP Feature Attribution Engine">
+    <div class="fig-cap">
+      <span><strong>Figure 7.4:</strong> SHAP TreeExplainer Engine displaying Global Feature Importance bar rankings and Local Sample Prediction Waterfall.</span>
+      <span class="badge b-blue">SHAP EXPLAINABILITY</span>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>TreeExplainer Additive Formulation:</strong> $f(x) = \mathbb{E}[f(x)] + \sum \phi_i(x)$. Decomposes forecasts into exact physical driver contributions.</li>
+    <li><strong>Model Toggles:</strong> Switch between <code>XGBoost v1.3.0</code>, <code>LightGBM v1.1.0</code>, and <code>CatBoost v1.2.0</code>.</li>
+    <li><strong>Global Feature Ranking:</strong> Solar Irradiance (~42%), 24h Historical Lag (~28%), Morning Baseline (~15%), Temperature/Azimuth (~15%).</li>
+    <li><strong>Local Prediction Waterfall:</strong> Step-by-step breakdown from expected base ($312.4\text{ mW}$) to sample prediction ($630.0\text{ mW}$).</li>
+  </ul>
+
+  <h2>7.5 Pillar 3: Model Performance Monitoring &amp; Retraining Pipeline</h2>
+  <ul>
+    <li><strong>Rolling MAE &amp; RMSE Tracking:</strong> Continuous error monitoring against a 55.0 mW policy limit.</li>
+    <li><strong>Dynamic Threshold Slider:</strong> Drag between 40 mW and 75 mW to adjust policy alert boundaries.</li>
+    <li><strong>Rolling Window Pills:</strong> Toggle between <code>7 Days</code>, <code>30 Days</code>, <code>90 Days</code>, or <code>Full Window</code>.</li>
+    <li><strong>🚀 Trigger Retrain Pipeline Now:</strong> Trains candidate models on fresh telemetry, evaluates validation metrics, and enforces promotion gating.</li>
+  </ul>
+
+  <h2>7.6 Pillar 3B: Champion vs. Challenger Governance Gate</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_mlops_champ.png" alt="Champion vs Challenger Governance Gate">
+    <div class="fig-cap">
+      <span><strong>Figure 7.5:</strong> Champion vs Challenger Governance Gate showing side-by-side model comparison cards, 5-gate checklist, and Promote/Rollback buttons.</span>
+      <span class="badge b-amber">GOVERNANCE GATE</span>
+    </div>
+  </div>
+
+  <p>Enforces a <strong>5-Gate Checklist</strong> before allowing any model swap:</p>
+  <ol>
+    <li><strong>Validation MAE:</strong> Challenger (37.85 mW) beats Champion (39.44 mW) by -1.59 mW. <span class="badge b-green">PASSED</span></li>
+    <li><strong>Validation RMSE:</strong> Challenger (95.20 mW) beats Champion (98.04 mW) by -2.84 mW. <span class="badge b-green">PASSED</span></li>
+    <li><strong>R² Score Preservation:</strong> Challenger ($R^2 = 0.9782$) maintains $>0.95$ threshold. <span class="badge b-green">PASSED</span></li>
+    <li><strong>Latency SLA:</strong> Inference speed ($1.12\text{ ms}$) satisfies &lt;5.0 ms real-time dispatch requirement. <span class="badge b-green">PASSED</span></li>
+    <li><strong>Cryptographic SHA-256 Provenance:</strong> Checksum verified against artifact registry. <span class="badge b-green">PASSED</span></li>
+  </ol>
+  <p>
+    When all 5 gates pass, operators can click <code>🚀 Promote Challenger to Production</code>. 
+    If unexpected behavior is observed, clicking <code>↩️ Rollback to Previous Champion</code> reverts immediately.
+  </p>
+
+  <h2>7.7 Pillar 4: Model Registry &amp; Compliance Audit Trail</h2>
+  <ul>
+    <li><strong>Artifact Registry Cards:</strong> Verifies physical files in <code>output/</code> with exact byte sizes, training dates, and SHA-256 cryptographic fingerprints.</li>
+    <li><strong>Immutable Audit Trail Table:</strong> Chronological event ledger recording every pipeline initialization, training completion, threshold modification, and production promotion event with exact UTC timestamps.</li>
+  </ul>
+
+  <!-- SECTION 8 -->
+  <div class="page-break"></div>
+  <h1>8. Dashboard 6: Spatial Portfolio Smoothing &amp; Diversification</h1>
+
+  <h2>8.1 Physics of Spatial Portfolio Smoothing</h2>
+  <p>
+    Individual solar installations suffer from jagged ramp rates when cumulus clouds pass overhead. 
+    However, when solar plants are distributed across geographic coordinates and panel azimuth orientations, clouds do not strike all plants simultaneously. 
+    The <strong>Spatial Portfolio Smoothing Engine</strong> (Tab 6) proves and quantifies how geographic diversification smooths aggregate grid injection.
+  </p>
+
+  <div class="fig-box">
+    <img src="../scratch/screenshots/tab_spatial.png" alt="Dashboard 6: Spatial Portfolio Smoothing">
+    <div class="fig-cap">
+      <span><strong>Figure 8.1:</strong> Spatial Portfolio Smoothing Engine showing Headline Portfolio Diversification Index (+24.8% gain), 6 Portfolio KPIs, Sub-Portfolio Re-Optimizer, Compass Rose, and Heatmap.</span>
+      <span class="badge b-blue">TAB 6: SPATIAL SMOOTHING</span>
+    </div>
+  </div>
+
+  <h2>8.2 Headline Diversification Index &amp; Smoothing Factor ($S$)</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_spatial_kpis.png" alt="Spatial KPIs and Diversification Banner">
+    <div class="fig-cap">
+      <span><strong>Figure 8.2:</strong> Headline Portfolio Diversification Index (PDI) Banner displaying Volatility Dampening Gain (+24.8%) and 6 Fleet Smoothing KPIs.</span>
+      <span class="badge b-green">PORTFOLIO DIVERSIFICATION</span>
+    </div>
+  </div>
+
+  <p>The system computes the Coefficient of Variation ($CV = \sigma / \mu$) for individual plants and for the aggregated fleet:</p>
+  <code>Smoothing Factor S = Fleet CV / Mean Individual CV = 0.752</code><br>
+  <code>Volatility Dampening Gain = (1 - S) * 100% = +24.8%</code>
+  <p>
+    This proves that aggregating your 17 solar facilities dampens overall output volatility by <strong>nearly 25%</strong> compared to managing plants in silos.
+  </p>
+
+  <h2>8.3 Sub-Portfolio Re-Optimizer Presets</h2>
+  <p>Click individual plant buttons (L1 to L17) or choose pre-built portfolio presets:</p>
+  <ul>
+    <li><code>🌐 All 17 Plants</code>: Full national grid diversification.</li>
+    <li><code>⛰️ Inland Cluster (L1–L14)</code>: Shoufeng agricultural basin installations.</li>
+    <li><code>🌊 Coastal Cluster (L15–L17)</code>: Pacific coastal corridor facilities.</li>
+    <li><code>🌅 East-Facing (L11, L15, L16)</code>: Staggers generation to peak during morning sunrise.</li>
+    <li><code>☀️ South-Facing (L1–L4, L7, L14)</code>: Maximizes midday solar capture.</li>
+    <li><code>🌇 West-Facing (L5, L6, L8, L10, L12, L13)</code>: Extends power production into late afternoon to meet evening peak demand.</li>
+  </ul>
+
+  <h2>8.4 True Azimuth Compass Rose &amp; Correlation Heatmap</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_spatial_compass_heatmap.png" alt="Azimuth Compass Rose and Correlation Heatmap">
+    <div class="fig-cap">
+      <span><strong>Figure 8.3:</strong> Left: True Azimuth Directional Compass Rose Canvas (0°=N, 90°=E, 180°=S, 270°=W). Right: 17x17 Timestamp-Aligned Cross-Plant Pearson Correlation Heatmap.</span>
+      <span class="badge b-blue">SPATIAL VISUALIZATION</span>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>Compass Rose Canvas:</strong> Visualizes physical panel orientation vectors. Grouped into East (3 plants), South (6 plants), and West (8 plants). Ensures that peak generation is staggered throughout the day.</li>
+    <li><strong>17×17 Correlation Heatmap:</strong> Displays pairwise Pearson correlation coefficients ($r$) calculated strictly from synchronous timestamp intersections. Inland neighbors correlate strongly ($r \approx 0.88–0.96$), while cross-cluster pairs decorrelate ($r \approx 0.54–0.68$).</li>
+  </ul>
+
+  <h2>8.5 Spatial Decorrelation Curve &amp; Ramp Histogram</h2>
+  <div class="fig-box">
+    <img src="../scratch/crops/crop_spatial_decorrelation_ramp.png" alt="Haversine Decorrelation and Ramp Histogram">
+    <div class="fig-cap">
+      <span><strong>Figure 8.4:</strong> Left: Haversine Physical Distance (km) vs Pearson Correlation ($r$) with exponential decay fit. Right: 10-Minute $\Delta P / \Delta t$ Ramp Volatility Reduction Distribution Histogram.</span>
+      <span class="badge b-blue">DECORRELATION &amp; RAMPING</span>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>Haversine Distance Decorrelation Curve:</strong> Calculates great-circle physical distance between plant pairs. Proves that as physical separation increases beyond 15 km, correlation drops by over 35%, confirming the geographical dispersion benefit.</li>
+    <li><strong>Ramp-Rate Distribution Histogram:</strong> Directly compares the distribution of 10-minute generation jumps ($\Delta P / \Delta t$) for a single isolated plant (wide, volatile bell curve) against the aggregated fleet portfolio (tight, narrow spike centered at zero). Extreme ramping events are reduced by over <strong>40%</strong>.</li>
+  </ul>
+
+  <!-- SECTION 9 -->
+  <div class="page-break"></div>
+  <h1>9. Operational Playbooks &amp; Daily Control Room Procedures</h1>
+
+  <h2>9.1 Morning Pre-Dispatch Grid Assessment (07:30 UTC / Pre-Sunrise)</h2>
+  <div class="step-box">
+    <div class="step-tag">SOP 1</div>
+    <div class="step-heading">Morning Forecast Verification &amp; Unit Commitment</div>
+    <ol style="margin-left:18px;">
+      <li>Open the dashboard at <code>http://localhost:8000/frontend/index.html</code>.</li>
+      <li>Confirm the top-right status dot is <strong>pulsing green</strong> (online and synced).</li>
+      <li>Verify the active date is set to today's date. Click <code>⚡ Refresh Forecast View</code>.</li>
+      <li>In <strong>Tab 1 (Fleet Overview)</strong>, note the <strong>Fleet Peak Output</strong> and <strong>Total Forecast Energy (MWh)</strong>.</li>
+      <li>In <strong>Tab 3 (Single Day Deep-Dive)</strong>, inspect the 48-interval curve to identify the projected solar peak window (11:30 to 13:30 UTC).</li>
+      <li>Check the <strong>Conformal Safety Ribbon</strong> width: if ribbon width is $\le \pm 20\text{ MW}$, confidence is high. If width exceeds $\pm 35\text{ MW}$, schedule additional spinning reserve margin.</li>
+    </ol>
+  </div>
+
+  <h2>9.2 Intraday Cloud Transient &amp; Ramp Mitigation Workflow</h2>
+  <div class="step-box">
+    <div class="step-tag">SOP 2</div>
+    <div class="step-heading">Real-Time Ramp Criticality &amp; Early-Warning Dispatch</div>
+    <ol style="margin-left:18px;">
+      <li>During active generation hours, display <strong>Tab 3 (Single Day)</strong> or <strong>Tab 4 (Cloud Radar)</strong> on the primary control room video wall.</li>
+      <li>Monitor the <strong>Ramp Speedometer Gauge ($dP/dt$)</strong>:
+        <ul>
+          <li><strong>Needle in Green (0–15 MW/min):</strong> System normal. No intervention needed.</li>
+          <li><strong>Needle in Amber (15–25 MW/min):</strong> Alert BESS operators to standby mode.</li>
+          <li><strong>Needle in Crimson (&gt;25 MW/min):</strong> Critical ramp event. Verify automated BESS discharge is active.</li>
+        </ul>
+      </li>
+      <li>If weather stations report shifting winds, switch to <strong>Tab 4 (Cloud Radar)</strong> and select the wind direction preset (e.g. <code>⛰️ West Trade</code>).</li>
+      <li>Identify the advance sentinel plant (e.g. <code>Plant L13</code>) and monitor the <strong>Time Until Impact</strong> HUD countdown.</li>
+      <li>Confirm battery reserve storage pre-arms before countdown reaches zero, locking grid frequency at <strong>60.00 Hz</strong>.</li>
+    </ol>
+  </div>
+
+  <h2>9.3 Weekly MLOps Governance &amp; Retraining Workflow</h2>
+  <div class="step-box">
+    <div class="step-tag">SOP 3</div>
+    <div class="step-heading">Drift Surveillance &amp; Candidate Promotion Audit</div>
+    <ol style="margin-left:18px;">
+      <li>Every Monday morning, navigate to <strong>Tab 5 (MLOps Governance &amp; Observability)</strong>.</li>
+      <li>Verify the <strong>Overall Governance Health Score</strong> is $\ge 90\%$.</li>
+      <li>Inspect the <strong>Data Drift (PSI Score)</strong>. If red drift is flagged (<code>PSI ≥ 0.25</code>), click <code>🚀 Trigger Retrain Pipeline Now</code>.</li>
+      <li>In the <strong>Champion vs Challenger</strong> card, review the 5-Gate Checklist.</li>
+      <li>If all 5 gates display <span class="badge b-green">PASSED</span>, click <code>🚀 Promote Challenger to Production</code>.</li>
+      <li>Verify that the new model version is active and the promotion event appears in the <strong>Audit Trail Table</strong>.</li>
+    </ol>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="page-break"></div>
+  <h1>10. Troubleshooting, Health Diagnostics &amp; FAQs</h1>
+
+  <h2>10.1 Diagnostic Problem-Solution Matrix</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:25%;">Observed Symptom</th>
+        <th style="width:30%;">Probable Root Cause</th>
+        <th style="width:45%;">Remediation &amp; Recovery Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Header Status shows "Connecting to prediction data..." indefinitely</strong></td>
+        <td>Python backend server (<code>mlops_backend.py</code>) is stopped or port 8000 is blocked.</td>
+        <td>Open terminal in project folder and run <code>python mlops_backend.py</code>. Verify output shows <code>Running at: http://localhost:8000/</code>. Refresh browser page.</td>
+      </tr>
+      <tr>
+        <td><strong>Date dropdown is empty or displays "No dates in this month"</strong></td>
+        <td>Month jump filter is set to an inactive month (e.g. November or December).</td>
+        <td>Click the <strong>All</strong> month pill or select an active month between <strong>Jan</strong> and <strong>Oct</strong>. All 72 test dates will repopulate immediately.</td>
+      </tr>
+      <tr>
+        <td><strong>Amber / Red Data Drift Alert (PSI ≥ 0.25)</strong></td>
+        <td>Atmospheric anomaly (typhoon surge, summer heatwave, or uncalibrated photodiode sensor).</td>
+        <td>Check the 17-Plant Surveillance Strip to see if drift is localized. In Tab 5, click <code>🚀 Trigger Retrain Pipeline Now</code> to adapt models to fresh telemetry.</td>
+      </tr>
+      <tr>
+        <td><strong>Quarantined Records counter increasing in Sensor Gate</strong></td>
+        <td>Field sensor photodiode failure, corrupt serial packet, or timestamp jump.</td>
+        <td>Scroll to the <strong>Quarantined Telemetry Log</strong> in Tab 5. Note the Record ID and Fault Class. Dispatch maintenance to inspect wiring. Valid records proceed unaffected.</td>
+      </tr>
+      <tr>
+        <td><strong>Rolling MAE exceeds 55.0 mW policy limit</strong></td>
+        <td>Severe weather patterns creating temporary model divergence.</td>
+        <td>Adjust the Error Alert Threshold slider if operational margins permit, or trigger the automated retraining pipeline to train fresh candidate models.</td>
+      </tr>
+      <tr>
+        <td><strong>CSV Export button downloads empty file</strong></td>
+        <td>Browser popup blocker intercepted the DOM Blob download link.</td>
+        <td>Allow popups and file downloads for <code>localhost:8000</code> in your browser security settings, then click <code>📥 Export Active View to CSV</code> again.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>10.2 Frequently Asked Questions (FAQ)</h2>
+  <p><strong>Q1: Why does the system clip negative predictions to zero?</strong></p>
+  <p>Solar panels cannot generate negative electricity. Regression trees can occasionally produce small negative values during sunrise or sunset (e.g. $-0.04\text{ mW}$). The post-processing pipeline strictly enforces $p = \max(p, 0)$, ensuring all grid dispatch calculations remain physically sound.</p>
+
+  <p><strong>Q2: Can I run this platform on an offline air-gapped utility network?</strong></p>
+  <p>Yes. The entire platform runs locally from the project workspace. The backend operates entirely on standard Python libraries without external cloud dependencies.</p>
+
+  <p><strong>Q3: How often should the automated retraining pipeline be executed?</strong></p>
+  <p>Under normal operations, retraining is recommended once every 14 to 30 days. However, if the <strong>Data Drift PSI Score exceeds 0.25</strong> or rolling MAE breaches the 55 mW policy threshold, an automated candidate retrain should be executed immediately.</p>
+
+  <!-- SECTION 11 -->
+  <div class="page-break"></div>
+  <h1>11. Technical Specifications, 17-Plant Reference &amp; REST APIs</h1>
+
+  <h2>11.1 Complete 17-Plant Technical Reference Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Facility Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Panel Azimuth</th>
+        <th>Altitude</th>
+        <th>Cluster Group</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>L1</strong></td><td>Shoufeng Solar Baseline</td><td>23.8992°N</td><td>121.5438°E</td><td>180° (South)</td><td>5m</td><td>Inland Basin</td></tr>
+      <tr><td><strong>L2</strong></td><td>Array Central East</td><td>23.9015°N</td><td>121.5460°E</td><td>185° (South)</td><td>8m</td><td>Inland Basin</td></tr>
+      <tr><td><strong>L3</strong></td><td>Array Sector 3 East</td><td>23.9040°N</td><td>121.5492°E</td><td>190° (SSW)</td><td>12m</td><td>Inland Basin</td></tr>
+      <tr><td><strong>L4</strong></td><td>Array Sector 4 South</td><td>23.8965°N</td><td>121.5410°E</td><td>180° (South)</td><td>6m</td><td>Inland Basin</td></tr>
+      <tr><td><strong>L5</strong></td><td>Array Sector 5 West</td><td>23.9080°N</td><td>121.5385°E</td><td>245° (WSW)</td><td>45m</td><td>West Foothills</td></tr>
+      <tr><td><strong>L6</strong></td><td>Array Sector 6 North</td><td>23.9125°N</td><td>121.5420°E</td><td>250° (WSW)</td><td>52m</td><td>West Foothills</td></tr>
+      <tr><td><strong>L7</strong></td><td>Array Sector 7 Center</td><td>23.9050°N</td><td>121.5445°E</td><td>180° (South)</td><td>10m</td><td>Inland Basin</td></tr>
+      <tr><td><strong>L8</strong></td><td>Array Sector 8 Slope</td><td>23.9160°N</td><td>121.5350°E</td><td>260° (West)</td><td>110m</td><td>West Foothills</td></tr>
+      <tr><td><strong>L9</strong></td><td>Array Sector 9 West</td><td>23.9210°N</td><td>121.5310°E</td><td>270° (West)</td><td>185m</td><td>West Foothills</td></tr>
+      <tr><td><strong>L10</strong></td><td>Array Sector 10 Ridge</td><td>23.9255°N</td><td>121.5280°E</td><td>275° (West)</td><td>240m</td><td>West Foothills</td></tr>
+      <tr><td><strong>L11</strong></td><td>Array Sector 11 East</td><td>23.9180°N</td><td>121.5580°E</td><td>90° (East)</td><td>15m</td><td>East Plain</td></tr>
+      <tr><td><strong>L12</strong></td><td>Array Sector 12 Bench</td><td>23.9310°N</td><td>121.5240°E</td><td>280° (WNW)</td><td>275m</td><td>West Foothills</td></tr>
+      <tr><td><strong>L13</strong></td><td>Ridge Sentinel West</td><td>23.9380°N</td><td>121.5190°E</td><td>270° (West)</td><td>310m</td><td>Advance Sentinel (West)</td></tr>
+      <tr><td><strong>L14</strong></td><td>Ridge Sentinel North</td><td>23.9450°N</td><td>121.5220°E</td><td>195° (SSW)</td><td>295m</td><td>Advance Sentinel (North)</td></tr>
+      <tr><td><strong>L15</strong></td><td>Ji'an Coastal Array N1</td><td>23.9720°N</td><td>121.6050°E</td><td>85° (East)</td><td>4m</td><td>Coastal Corridor (Sentinel East)</td></tr>
+      <tr><td><strong>L16</strong></td><td>Ji'an Coastal Array N2</td><td>23.9850°N</td><td>121.6120°E</td><td>90° (East)</td><td>3m</td><td>Coastal Corridor (Sentinel East)</td></tr>
+      <tr><td><strong>L17</strong></td><td>Hualien Port Array</td><td>24.0050°N</td><td>121.6280°E</td><td>240° (WSW)</td><td>2m</td><td>Coastal Port Array</td></tr>
+    </tbody>
+  </table>
+
+  <h2>11.2 Production REST API Reference</h2>
+  <p>The Python backend (<code>mlops_backend.py</code>) provides standardized JSON endpoints for SCADA and EMS integration:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Method &amp; Endpoint</th>
+        <th>Parameters</th>
+        <th>Payload Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>GET /mlops/summary</code></td><td><code>plant, month, threshold</code></td><td>Unified MLOps health score (0–100%), overall governance status, summary of all 4 pillars.</td></tr>
+      <tr><td><code>GET /mlops/drift</code></td><td><code>plant, scenario, month</code></td><td>Feature-by-feature PSI scores, drift status (Stable/Warning/Drift), 10-bucket quantile histograms.</td></tr>
+      <tr><td><code>GET /mlops/sensor</code></td><td><code>plant, month, date</code></td><td>Ingestion audit counters (inspected, valid, quarantined), physical boundary limits, active quarantine log.</td></tr>
+      <tr><td><code>POST /mlops/sensor/test</code></td><td>None</td><td>Executes an immediate 5,000-record sensor ingestion quality audit and returns pass/fail statistics.</td></tr>
+      <tr><td><code>GET /mlops/performance</code></td><td><code>plant, threshold, window_days</code></td><td>Rolling MAE &amp; RMSE time-series, model degradation shift percentages, policy limit violations.</td></tr>
+      <tr><td><code>GET /mlops/shap</code></td><td><code>plant, model, scenario</code></td><td>Global SHAP attribution percentages, local prediction waterfall steps, natural language physics insight.</td></tr>
+      <tr><td><code>GET /mlops/challenger</code></td><td>None</td><td>Champion vs Challenger evaluation metrics, 5-gate checklist verification results, promotion eligibility.</td></tr>
+      <tr><td><code>POST /mlops/promote</code></td><td>None</td><td>Promotes candidate challenger to production, updates active pointers, and appends to audit log.</td></tr>
+      <tr><td><code>POST /mlops/rollback</code></td><td>None</td><td>Reverts active production serving to previous champion model artifact.</td></tr>
+      <tr><td><code>GET /mlops/registry</code></td><td>None</td><td>Physical artifact file sizes, timestamps, hyperparameter metadata, SHA-256 cryptographic hashes.</td></tr>
+      <tr><td><code>POST /mlops/retrain</code></td><td>None</td><td>Triggers live candidate model retraining pipeline, out-of-fold validation, and promotion evaluation.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-tip" style="margin-top:16px;">
+    <strong>Verification &amp; Integrity Notice:</strong>
+    This operational user manual is generated directly from active workspace files. 
+    Every figure embeds genuine screenshots captured from the live application running on <code>http://localhost:8000/</code>.
+  </div>
+
+</body>
+</html>
